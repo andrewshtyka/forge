@@ -1,0 +1,21 @@
+.button {
+  padding: var(--space-8);
+  height: var(--space-15);
+
+  border-radius: var(--border-radius-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon {
+  margin-inline-end: var(--space-4);
+  display: inline-flex;
+}
+
+.img_icon {
+  & img {
+    height: var(--space-12);
+    width: auto;
+  }
+}

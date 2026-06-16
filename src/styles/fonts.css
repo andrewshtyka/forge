@@ -1,0 +1,64 @@
+.f_h1 {
+  font-size: var(--font-size-h1);
+  font-weight: 400;
+  line-height: var(--line-height-10);
+  letter-spacing: var(--letter-spacing-40);
+  /* font-variation-settings: "opsz" 40; */
+}
+
+.f_h2 {
+  font-size: var(--font-size-h2);
+  font-weight: 400;
+  line-height: var(--line-height-20);
+  letter-spacing: var(--letter-spacing-40);
+  /* font-variation-settings: "opsz" 40; */
+}
+
+.f_h3 {
+  font-size: var(--font-size-h3);
+  font-weight: 500;
+  line-height: var(--line-height-30);
+  letter-spacing: var(--letter-spacing-20);
+  /* font-variation-settings: "opsz" 40; */
+}
+
+.f_h4 {
+  font-family: var(--font);
+  font-size: var(--font-size-h4);
+  font-weight: 400;
+  line-height: var(--line-height-30);
+  letter-spacing: var(--letter-spacing-40);
+  /* font-variation-settings: "opsz" 40; */
+}
+
+.f_body {
+  font-size: var(--font-size-body);
+  font-weight: 400;
+  line-height: var(--line-height-40);
+  letter-spacing: var(--letter-spacing-30);
+  /* font-variation-settings: "opsz" 40; */
+}
+
+.f_description {
+  font-size: var(--font-size-description);
+  font-weight: 500;
+  line-height: var(--line-height-30);
+  letter-spacing: var(--letter-spacing-10);
+  /* font-variation-settings: "opsz" 40; */
+}
+
+.f_menu {
+  font-size: var(--font-size-menu);
+  font-weight: 500;
+  line-height: var(--line-height-20);
+  letter-spacing: var(--letter-spacing-40);
+  /* font-variation-settings: "opsz" 40; */
+}
+
+.f_uppercase {
+  text-transform: uppercase;
+}
+
+.f_capitalize {
+  text-transform: capitalize;
+}

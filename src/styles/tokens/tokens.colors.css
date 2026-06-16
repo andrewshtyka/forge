@@ -1,0 +1,45 @@
+:root {
+  /* monochrome */
+  --hue: 224;
+  --color-gray-0: hsl(var(--hue), 5%, 4%);
+  --color-gray-200: hsl(var(--hue), 5%, 4%);
+  --color-gray-500: hsl(var(--hue), 5%, 53%);
+  --color-gray-900: hsl(var(--hue), 18%, 90%);
+  --color-gray-960: hsl(var(--hue), 20%, 95%);
+  --color-light: hsl(var(--hue), 0%, 100%);
+
+  /* accent */
+  --color-blue-0: hsl(var(--hue), 76%, 48%);
+  --color-blue-850: hsl(var(--hue), 65%, 57%);
+  --color-blue-900: hsl(var(--hue), 100%, 84%);
+
+  /* ================================================== */
+  /* */
+  /* Background */
+  --color-bg-primary: var(--color-light);
+  --color-bg-secondary: var(--color-gray-0);
+  --color-bg-tetriary: var(--color-gray-960);
+  --color-bg-accent: var(--color-blue-0);
+
+  /* ================================================== */
+  /* */
+  /* Buttons */
+  --color-button-primary: var(--color-blue-0);
+  --color-button-secondary: var(--color-light);
+
+  /* ================================================== */
+  /* */
+  /* Dots BG */
+  --color-dots-primary: var(--color-gray-900);
+  --color-dots-secondary: var(--color-blue-850);
+
+  /* ================================================== */
+  /* */
+  /* Text */
+  --color-text-dark: var(--color-gray-0);
+  --color-text-light: var(--color-light);
+  --color-text-gray: var(--color-gray-500);
+
+  --color-text-accent-primary: var(--color-blue-0);
+  --color-text-accent-secondary: var(--color-blue-900);
+}
