@@ -6,5 +6,6 @@ export const ANIM_HEADER = {
   menu: {
     transition: 0.3,
     ease: [0.25, 0, 0, 1],
+    headerBlendDelay: 200,
   },
 };

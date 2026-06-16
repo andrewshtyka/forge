@@ -68,3 +68,11 @@
 .f_capitalize {
   text-transform: capitalize;
 }
+
+.f_left {
+  text-align: left;
+}
+
+.f_right {
+  text-align: right;
+}

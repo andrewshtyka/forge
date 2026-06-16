@@ -8,6 +8,7 @@ import { motion } from "motion/react";
 // components
 import IconLocation from "../Icons/IconLocation/IconLocation";
 import LinkText from "../LinkText/LinkText";
+import DotsBG from "../DotsBG/DotsBG";
 
 // constants
 import { ANIM_HEADER } from "@/constants/animation";
@@ -49,6 +50,9 @@ export default function MenuMobile() {
         ease: ANIM_HEADER.menu.ease,
       }}
     >
+      {/* dots bg */}
+      <DotsBG color="blue" />
+
       {/* top */}
       <div className={css.container_top}>
         {/* address */}

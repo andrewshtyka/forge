@@ -10,6 +10,7 @@ import MenuButton from "../MenuButton/MenuButton";
 import Link from "next/link";
 
 // constants
+import { ANIM_HEADER } from "@/constants/animation";
 
 // hooks
 
@@ -53,7 +54,7 @@ function useDelayedBlendMode(isMenuOpened) {
     } else {
       const timer = setTimeout(() => {
         setBlendMode("difference");
-      }, 200);
+      }, ANIM_HEADER.menu.headerBlendDelay);
       return () => clearTimeout(timer);
     }
   }, [isMenuOpened]);

@@ -11,6 +11,10 @@ import img_icon from "@/assets/images/mesh.webp";
 // components
 import Image from "next/image";
 import IconArrow from "../Icons/IconArrow/IconArrow";
+import Sequence from "../Sequence/Sequence";
+import DotsBG from "../DotsBG/DotsBG";
+import Button from "../Button/Button";
+import ImageCarousel from "../ImageCarousel/ImageCarousel";
 
 // constants
 
@@ -23,15 +27,15 @@ import css from "./Hero.module.css";
 
 // utility
 import React from "react";
-import Button from "../Button/Button";
-import ImageCarousel from "../ImageCarousel/ImageCarousel";
-import Sequence from "../Sequence/Sequence";
 
 // #endregion ===========================
 
 export default function Hero() {
   return (
     <section className={css.section}>
+      {/* dots bg */}
+      <DotsBG />
+
       {/* title */}
       <div className={css.container_title}>
         <h1 className={`f_h1 ${css.title}`}>
@@ -40,16 +44,14 @@ export default function Hero() {
           Parts Shipped as Fast as Tomorrow
         </h1>
       </div>
-
       {/* animated images */}
       <div className={css.container_sequence}>
         <Sequence />
         {/* <ImageCarousel /> */}
       </div>
-
       {/* bottom */}
       <div className={css.container_bottom}>
-        <p className={`f_description ${css.description}`}>
+        <p className={`f_description f_uppercase f_left ${css.description}`}>
           12+ years of delivering perfect details
         </p>
 
@@ -66,7 +68,7 @@ export default function Hero() {
           </Button>
         </div>
 
-        <p className={`f_description ${css.description}`}>
+        <p className={`f_description f_uppercase f_right ${css.description}`}>
           100,000+ parts manufactured annually
         </p>
       </div>
