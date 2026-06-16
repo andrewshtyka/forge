@@ -1,0 +1,26 @@
+.button {
+  height: var(--space-10);
+  aspect-ratio: 1;
+  position: relative;
+
+  &::before {
+    content: "";
+    height: calc(var(--space-10) + var(--offset-primary));
+    width: calc(var(--space-10) + var(--offset-primary));
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  & span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: calc(var(--space-px) + var(--space-px) / 2);
+
+    background-color: var(--color-text-light);
+    top: 50%;
+    left: 50%;
+  }
+}

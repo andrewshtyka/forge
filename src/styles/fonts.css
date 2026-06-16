@@ -39,6 +39,13 @@
   /* font-variation-settings: "opsz" 40; */
 }
 
+.f_logo {
+  font-size: var(--space-10);
+  font-weight: 400;
+  line-height: var(--line-height-40);
+  letter-spacing: var(--letter-spacing-30);
+}
+
 .f_description {
   font-size: var(--font-size-description);
   font-weight: 500;
@@ -49,10 +56,9 @@
 
 .f_menu {
   font-size: var(--font-size-menu);
-  font-weight: 500;
+  font-weight: 400;
   line-height: var(--line-height-20);
-  letter-spacing: var(--letter-spacing-40);
-  /* font-variation-settings: "opsz" 40; */
+  letter-spacing: var(--letter-spacing-30);
 }
 
 .f_uppercase {

@@ -24,6 +24,8 @@ import css from "./Hero.module.css";
 // utility
 import React from "react";
 import Button from "../Button/Button";
+import ImageCarousel from "../ImageCarousel/ImageCarousel";
+import Sequence from "../Sequence/Sequence";
 
 // #endregion ===========================
 
@@ -31,14 +33,21 @@ export default function Hero() {
   return (
     <section className={css.section}>
       {/* title */}
-      <h1 className={`f_h1 ${css.title}`}>
-        Precision
-        <Image src={img_title} alt="CNC" className={css.img_title} />
-        Parts Shipped as Fast as Tomorrow
-      </h1>
+      <div className={css.container_title}>
+        <h1 className={`f_h1 ${css.title}`}>
+          Precision
+          <Image src={img_title} alt="CNC" className={css.img_title} />
+          Parts Shipped as Fast as Tomorrow
+        </h1>
+      </div>
 
       {/* animated images */}
+      <div className={css.container_sequence}>
+        <Sequence />
+        {/* <ImageCarousel /> */}
+      </div>
 
+      {/* bottom */}
       <div className={css.container_bottom}>
         <p className={`f_description ${css.description}`}>
           12+ years of delivering perfect details

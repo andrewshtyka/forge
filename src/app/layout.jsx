@@ -3,6 +3,9 @@
 // fonts
 import { font } from "@/lib/helpers/importFonts";
 
+// providers / context
+import { MenuStateProvider } from "@/providers/MenuStateProvider/MenuStateProvider";
+
 // styles
 import "@/styles/globals.css";
 import "@/styles/reset.css";
@@ -21,7 +24,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={font.variable}>
-      <body>{children}</body>
+      <MenuStateProvider>
+        <body>{children}</body>
+      </MenuStateProvider>
     </html>
   );
 }

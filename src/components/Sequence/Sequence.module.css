@@ -1,0 +1,22 @@
+.img {
+  height: 100%;
+  width: 40vmin;
+}
+
+@media (width >= 480px) {
+  .img {
+    width: 35vmin;
+  }
+}
+
+@media (width >= 768px) {
+  .img {
+    width: 30vmin;
+  }
+}
+
+@media (width >= 1920px) {
+  .img {
+    width: 30vmin;
+  }
+}

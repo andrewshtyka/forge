@@ -24,11 +24,15 @@
   --space-19: calc(128 * var(--space-base));
   --space-20: calc(256 * var(--space-base));
 
+  /* Border radius */
+  --border-radius-primary: var(--space-4);
+
+  /* Img in title - margins */
   /* Viewport: 320 - 1920 */
   --img-title-margin: clamp(0.375rem, 0.1rem + 1.375vw, 1.75rem); /* 6 - 28*/
 
-  /* Border radius */
-  --border-radius-primary: var(--space-4);
+  /* Mob header height */
+  --header-height: calc(var(--space-11) + var(--offset-primary) * 2);
 
   /* Offset from window */
   --offset-primary: var(--space-10); /* 20px */

@@ -1,0 +1,21 @@
+.header {
+  padding: var(--offset-primary);
+  height: var(--header-height);
+  width: 100%;
+
+  position: fixed;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* mix-blend-mode: difference; */
+  color: var(--color-text-light);
+}
+
+.container_logo {
+  display: flex;
+  align-items: center;
+  column-gap: var(--space-6);
+}
