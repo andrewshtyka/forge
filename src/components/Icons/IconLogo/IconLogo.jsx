@@ -20,13 +20,13 @@ import React from "react";
 
 // #endregion ===========================
 
-export default function IconLogo({ color = "light", size = 18 }) {
+export default function IconLogo({ color = "white", size = 18 }) {
   let appliedColor;
 
-  if (color === "light") {
-    appliedColor = "var(--color-text-light)";
-  } else if (color === "dark") {
-    appliedColor = "var(--color-text-dark)";
+  if (color === "white") {
+    appliedColor = "var(--color-bg-primary)";
+  } else if (color === "black") {
+    appliedColor = "var(--color-bg-secondary)";
   } else return null;
 
   return (

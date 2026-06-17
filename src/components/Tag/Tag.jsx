@@ -5,6 +5,7 @@
 // animation
 
 // components
+import Dot from "@/components/Dot/Dot";
 
 // constants
 
@@ -20,6 +21,12 @@ import React from "react";
 
 // #endregion ===========================
 
-export default function Tag() {
-  return <></>;
+export default function Tag({ children }) {
+  return (
+    <div className={css.tag}>
+      <Dot size="small" />
+      <h4 className="f_h4">{children}</h4>
+      <Dot size="small" />
+    </div>
+  );
 }

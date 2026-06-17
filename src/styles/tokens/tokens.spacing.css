@@ -24,18 +24,31 @@
   --space-19: calc(128 * var(--space-base));
   --space-20: calc(256 * var(--space-base));
 
+  /* ================================================== */
+  /* */
   /* Border radius */
   --border-radius-primary: var(--space-4);
+  --border-radius-secondary: var(--space-3);
 
+  /* ================================================== */
+  /* */
   /* Img in title - margins */
   /* Viewport: 320 - 1920 */
-  --img-title-margin: clamp(0.375rem, 0.1rem + 1.375vw, 1.75rem); /* 6 - 28*/
+  --img-title-margin: clamp(0.375rem, 0.15rem + 1.125vw, 1.5rem); /* 6 - 24*/
 
+  /* ================================================== */
+  /* */
   /* Mob header height */
   --header-height: calc(var(--space-11) + var(--offset-primary) * 2); /* 64 */
 
+  /* ================================================== */
+  /* */
   /* Offsets */
   --offset-primary: var(--space-10); /* 20px */
+
+  /* Viewport: 320 - 1920 */
+  --offset-sections: clamp(4rem, 3.3rem + 3.5vw, 7.5rem); /* 64 - 120 */
+
   /* Viewport: 320 - 1920 */
   --offset-hero-top: clamp(4rem, 2.8rem + 6vw, 10rem); /* 64 - 200 */
 }

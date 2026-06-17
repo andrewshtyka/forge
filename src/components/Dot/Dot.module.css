@@ -1,6 +1,4 @@
 .dot {
-  width: var(--space-3);
   aspect-ratio: 1;
-  background-color: var(--color-light);
   border-radius: 50%;
 }

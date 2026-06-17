@@ -63,9 +63,9 @@
 }
 
 .f_left {
-  text-align: left;
+  text-align: start;
 }
 
 .f_right {
-  text-align: right;
+  text-align: end;
 }

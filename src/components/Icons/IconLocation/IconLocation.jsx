@@ -21,15 +21,15 @@ import React from "react";
 // #endregion ===========================
 
 export default function IconLocation({
-  color = "light",
+  color = "white",
   stroke = 1.2,
   size = 16,
 }) {
   let appliedColor;
 
-  if (color === "light") {
+  if (color === "white") {
     appliedColor = "var(--color-text-light)";
-  } else if (color === "dark") {
+  } else if (color === "black") {
     appliedColor = "var(--color-text-dark)";
   } else return null;
 

@@ -23,18 +23,18 @@ import React from "react";
 
 export default function LinkText({
   children,
-  color = "dark",
+  color = "black",
   hasUnderline = true,
   type = "desktop",
 }) {
   // color
   let appliedStyles;
-  if ((color = "light")) {
+  if ((color = "white")) {
     appliedStyles = {
       color: "var(--color-text-light)",
       textDecorationColor: "var(--color-text-light)",
     };
-  } else if ((color = "dark")) {
+  } else if ((color = "black")) {
     appliedStyles = {
       color: "var(--color-text-dark)",
       textDecorationColor: "var(--color-text-dark)",

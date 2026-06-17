@@ -75,8 +75,6 @@ export default function VideoSection() {
       <iframe
         ref={iframeRef}
         src="https://www.youtube.com/embed/lEyNWtM6MW4?si=ZjEbnYGTmFg-1UMD&enablejsapi=1"
-        // width="100%"
-        // height="100%"
         frameBorder="0"
         allow="autoplay; encrypted-media; picture-in-picture"
         allowFullScreen

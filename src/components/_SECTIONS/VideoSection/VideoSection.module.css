@@ -3,6 +3,10 @@
   width: 100%;
   position: relative;
   background-color: var(--color-gray-0);
+
+  margin-block-end: var(--offset-sections);
+  overflow-x: hidden;
+
 }
 
 .video {

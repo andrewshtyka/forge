@@ -11,9 +11,9 @@ import img_icon from "@/assets/images/mesh.webp";
 // components
 import Image from "next/image";
 import IconArrow from "@/components/Icons/IconArrow/IconArrow";
-import Sequence from "@/components/Sequence/Sequence";
 import DotsBG from "@/components/DotsBG/DotsBG";
 import Button from "@/components/Button/Button";
+import Sequence from "@/components/Sequence/Sequence";
 
 // constants
 
@@ -47,7 +47,6 @@ export default function Hero() {
       {/* animated images */}
       <div className={css.container_sequence}>
         <Sequence />
-        {/* <ImageCarousel /> */}
       </div>
 
       {/* bottom */}

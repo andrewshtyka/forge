@@ -26,6 +26,13 @@ import React from "react";
 
 // #endregion ===========================
 
+const menuItems = [
+  "Reserve a machine",
+  "Tool library",
+  "Get in touch",
+  "Upload design",
+];
+
 export default function MenuMobile() {
   const { isMenuOpened, setIsMenuOpened } = React.useContext(MenuStateContext);
 
@@ -46,13 +53,6 @@ export default function MenuMobile() {
   const clipPathValue = isMenuOpened
     ? "inset(0% 0% 0% 0%)"
     : "inset(0% 0% 100% 0%)";
-
-  const menuItems = [
-    "Reserve a machine",
-    "Tool library",
-    "Get in touch",
-    "Upload design",
-  ];
 
   return (
     <motion.article

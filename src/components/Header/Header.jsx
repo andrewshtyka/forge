@@ -27,11 +27,11 @@ import React from "react";
 
 // #endregion ===========================
 
+const menuItems = ["Reserve a machine", "Tool library", "Get in touch"];
+
 export default function Header() {
   const { isMenuOpened } = React.useContext(MenuStateContext);
   const blendMode = useDelayedBlendMode(isMenuOpened);
-
-  const menuItems = ["Reserve a machine", "Tool library", "Get in touch"];
 
   return (
     <header
@@ -40,7 +40,7 @@ export default function Header() {
     >
       {/* logo */}
       <Link href="" className={css.container_logo}>
-        <IconLogo color="light" />
+        <IconLogo />
         <p className="f_body">Forge</p>
       </Link>
 
