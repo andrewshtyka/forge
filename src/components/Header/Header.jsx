@@ -8,6 +8,8 @@
 import IconLogo from "../Icons/IconLogo/IconLogo";
 import MenuButton from "../MenuButton/MenuButton";
 import Link from "next/link";
+import IconLocation from "../Icons/IconLocation/IconLocation";
+import LinkText from "../LinkText/LinkText";
 
 // constants
 import { ANIM_HEADER } from "@/constants/animation";
@@ -29,13 +31,44 @@ export default function Header() {
   const { isMenuOpened } = React.useContext(MenuStateContext);
   const blendMode = useDelayedBlendMode(isMenuOpened);
 
+  const menuItems = ["Reserve a machine", "Tool library", "Get in touch"];
+
   return (
-    <header className={css.header} style={{ mixBlendMode: blendMode }}>
+    <header
+      className={`grid ${css.header}`}
+      style={{ mixBlendMode: blendMode }}
+    >
+      {/* logo */}
       <Link href="" className={css.container_logo}>
         <IconLogo color="light" />
-        <p className="f_logo">Forge</p>
+        <p className="f_body">Forge</p>
       </Link>
 
+      {/* address - desktop */}
+      <address className={`f_body ${css.address}`}>
+        <IconLocation color="light" size={20} stroke={1.2} />
+        Canada, Montreal
+      </address>
+
+      {/* links - desktop */}
+      <nav className={css.nav}>
+        <ul className={css.container_links}>
+          {menuItems.map((item, i) => (
+            <li key={i}>
+              <LinkText type="desktop">{item}</LinkText>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      {/* lang - desktop */}
+      <div className={css.lang}>
+        <LinkText hasUnderline={false}>Eng</LinkText>
+        <span className={css.divider}>/</span>
+        <LinkText>Fra</LinkText>
+      </div>
+
+      {/* menu button - mobile */}
       <MenuButton />
     </header>
   );

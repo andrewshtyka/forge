@@ -10,11 +10,10 @@ import img_icon from "@/assets/images/mesh.webp";
 
 // components
 import Image from "next/image";
-import IconArrow from "../Icons/IconArrow/IconArrow";
-import Sequence from "../Sequence/Sequence";
-import DotsBG from "../DotsBG/DotsBG";
-import Button from "../Button/Button";
-import ImageCarousel from "../ImageCarousel/ImageCarousel";
+import IconArrow from "@/components/Icons/IconArrow/IconArrow";
+import Sequence from "@/components/Sequence/Sequence";
+import DotsBG from "@/components/DotsBG/DotsBG";
+import Button from "@/components/Button/Button";
 
 // constants
 
@@ -44,11 +43,13 @@ export default function Hero() {
           Parts Shipped as Fast as Tomorrow
         </h1>
       </div>
+
       {/* animated images */}
       <div className={css.container_sequence}>
         <Sequence />
         {/* <ImageCarousel /> */}
       </div>
+
       {/* bottom */}
       <div className={css.container_bottom}>
         <p className={`f_description f_uppercase f_left ${css.description}`}>

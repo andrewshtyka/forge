@@ -45,7 +45,13 @@ export default function Sequence() {
   return (
     <>
       {images.map((src, i) => (
-        <Image key={i} src={src} alt="Detail" className={css.img} />
+        <Image
+          key={i}
+          src={src}
+          alt="Detail"
+          className={css.img}
+          loading="eager"
+        />
       ))}
     </>
   );

@@ -3,6 +3,9 @@
   aspect-ratio: 1;
   position: relative;
 
+  grid-column: 8 / -1;
+  justify-self: flex-end;
+
   &::before {
     content: "";
     height: calc(var(--space-10) + var(--offset-primary));
@@ -22,5 +25,11 @@
     background-color: var(--color-text-light);
     top: 50%;
     left: 50%;
+  }
+}
+
+@media (width >= 1200px) {
+  .button {
+    display: none;
   }
 }

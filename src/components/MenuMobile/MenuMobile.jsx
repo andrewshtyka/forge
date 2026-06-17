@@ -27,7 +27,21 @@ import React from "react";
 // #endregion ===========================
 
 export default function MenuMobile() {
-  const { isMenuOpened } = React.useContext(MenuStateContext);
+  const { isMenuOpened, setIsMenuOpened } = React.useContext(MenuStateContext);
+
+  // close menu on resize to desktop
+  React.useEffect(() => {
+    if (!window) return;
+
+    function closeMenu() {
+      if (window.innerWidth >= 1200) {
+        setIsMenuOpened(false);
+      }
+    }
+
+    window.addEventListener("resize", closeMenu);
+    return () => window.removeEventListener("resize", closeMenu);
+  }, [setIsMenuOpened]);
 
   const clipPathValue = isMenuOpened
     ? "inset(0% 0% 0% 0%)"
