@@ -6,6 +6,7 @@ import Hero from "@/components/_SECTIONS/Hero/Hero";
 import MenuMobile from "@/components/MenuMobile/MenuMobile";
 import VideoSection from "@/components/_SECTIONS/VideoSection/VideoSection";
 import About from "@/components/_SECTIONS/About/About";
+import Process from "@/components/_SECTIONS/Process/Process";
 
 // #endregion ===========================
 
@@ -18,6 +19,7 @@ export default function Home() {
       <Hero />
       <VideoSection />
       <About />
+      <Process />
     </>
   );
 }

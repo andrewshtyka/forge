@@ -48,6 +48,7 @@
 
   /* Viewport: 320 - 1920 */
   --offset-sections: clamp(4rem, 3.3rem + 3.5vw, 7.5rem); /* 64 - 120 */
+  --offset-sections-large: calc(var(--offset-sections) + var(--space-13));
 
   /* Viewport: 320 - 1920 */
   --offset-hero-top: clamp(4rem, 2.8rem + 6vw, 10rem); /* 64 - 200 */
