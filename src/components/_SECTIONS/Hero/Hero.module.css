@@ -13,6 +13,7 @@
   /* padding-block-start: calc(var(--header-height) + 1vmin); */
 
   position: relative;
+  overflow-x: hidden;
 }
 
 /* ================================================== */
