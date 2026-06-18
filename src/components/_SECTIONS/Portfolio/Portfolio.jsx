@@ -16,6 +16,7 @@ import ListItemDesktop from "./ListItemDesktop/ListItemDesktop";
 import Divider from "@/components/Divider/Divider";
 import Button from "@/components/Button/Button";
 import IconArrow from "@/components/Icons/IconArrow/IconArrow";
+import Images from "./Images/Images";
 
 // constants
 
@@ -134,7 +135,9 @@ export default function Portfolio() {
       {/* desktop */}
       <div className={`grid ${css.container_list}`}>
         {/* images */}
-        <div className={css.container_images}></div>
+        <div className={css.container_images}>
+          <Images />
+        </div>
 
         {/* list */}
         <ul className={css.list_desktop}>

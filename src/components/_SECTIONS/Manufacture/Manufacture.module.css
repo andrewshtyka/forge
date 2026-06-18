@@ -1,0 +1,27 @@
+.section {
+  padding-block: var(--offset-sections);
+  padding-inline: var(--offset-primary);
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  max-width: 15ch;
+
+  /* Viewport: 320 - 1920 */
+  margin-block-end: clamp(3rem, 2.1rem + 4.5vw, 7.5rem); /* 48 - 120 */
+}
+
+.img_title {
+  /* Viewport: 320 - 1920 */
+  height: clamp(1.625rem, 1.05rem + 2.875vw, 4.5rem); /* 26 - 72 */
+  width: auto;
+  position: relative;
+  bottom: 0.13em;
+  margin-inline: calc(var(--img-title-margin) * 0.2);
+}
