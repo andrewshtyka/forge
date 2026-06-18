@@ -23,6 +23,7 @@ import css from "./MenuMobile.module.css";
 
 // utility
 import React from "react";
+import { RemoveScroll } from "react-remove-scroll";
 
 // #endregion ===========================
 
@@ -55,44 +56,46 @@ export default function MenuMobile() {
     : "inset(0% 0% 100% 0%)";
 
   return (
-    <motion.article
-      className={css.article}
-      initial={{ clipPath: "inset(0% 100% 100% 0%)" }}
-      animate={{ clipPath: clipPathValue }}
-      transition={{
-        duration: ANIM_HEADER.menu.transition,
-        ease: ANIM_HEADER.menu.ease,
-      }}
-    >
-      {/* dots bg */}
-      <DotsBG color="blue" />
+    <RemoveScroll enabled={isMenuOpened}>
+      <motion.article
+        className={css.article}
+        initial={{ clipPath: "inset(0% 100% 100% 0%)" }}
+        animate={{ clipPath: clipPathValue }}
+        transition={{
+          duration: ANIM_HEADER.menu.transition,
+          ease: ANIM_HEADER.menu.ease,
+        }}
+      >
+        {/* dots bg */}
+        <DotsBG color="blue" />
 
-      {/* top */}
-      <div className={css.container_top}>
-        {/* address */}
-        <address className={`f_body ${css.address}`}>
-          <IconLocation color="white" />
-          Canada, Montreal
-        </address>
+        {/* top */}
+        <div className={css.container_top}>
+          {/* address */}
+          <address className={`f_body ${css.address}`}>
+            <IconLocation color="white" />
+            Canada, Montreal
+          </address>
 
-        {/* links */}
-        <nav>
-          <ul className={css.container_links}>
-            {menuItems.map((item, i) => (
-              <li key={i}>
-                <LinkText type="mobile">{item}</LinkText>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+          {/* links */}
+          <nav>
+            <ul className={css.container_links}>
+              {menuItems.map((item, i) => (
+                <li key={i}>
+                  <LinkText type="mobile">{item}</LinkText>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
 
-      {/* bottom */}
-      <div>
-        <LinkText hasUnderline={false}>Eng</LinkText>
-        <span className={css.divider}>/</span>
-        <LinkText>Fra</LinkText>
-      </div>
-    </motion.article>
+        {/* bottom */}
+        <div>
+          <LinkText hasUnderline={false}>Eng</LinkText>
+          <span className={css.divider}>/</span>
+          <LinkText>Fra</LinkText>
+        </div>
+      </motion.article>
+    </RemoveScroll>
   );
 }

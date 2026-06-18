@@ -7,6 +7,7 @@
 // components
 import Image from "next/image";
 import Dot from "@/components/Dot/Dot";
+import Corner from "@/components/Icons/Corner/Corner";
 
 // constants
 
@@ -31,6 +32,82 @@ export default function ImageMasked({ src, alt = "" }) {
           <Dot />
         </div>
         <Image src={src} alt={alt} className={css.img} />
+
+        {/* Masked Lines */}
+        <div className={css.container_lines}>
+          {/* line 1 */}
+          <div className={css.line}>
+            <span className={css.top_left}>
+              <Corner />
+            </span>
+            <span className={css.top_right}>
+              <Corner />
+            </span>
+            <span className={css.bottom_left}>
+              <Corner />
+            </span>
+            <span className={css.bottom_right}>
+              <Corner />
+            </span>
+            <span className={css.dots_top}>
+              <Dot />
+              <Dot />
+            </span>
+            <span className={css.dots_bottom}>
+              <Dot />
+              <Dot />
+            </span>
+          </div>
+
+          {/* line 2 */}
+          <div className={`${css.line} ${css.hide}`}>
+            <span className={css.top_left}>
+              <Corner />
+            </span>
+            <span className={css.top_right}>
+              <Corner />
+            </span>
+            <span className={css.bottom_left}>
+              <Corner />
+            </span>
+            <span className={css.bottom_right}>
+              <Corner />
+            </span>
+            <span className={css.dots_top}>
+              <Dot />
+              <Dot />
+            </span>
+            <span className={css.dots_bottom}>
+              <Dot />
+              <Dot />
+            </span>
+          </div>
+
+          {/* line 3 */}
+          <div className={`${css.line} ${css.hide}`}>
+            <span className={css.top_left}>
+              <Corner />
+            </span>
+            <span className={css.top_right}>
+              <Corner />
+            </span>
+            <span className={css.bottom_left}>
+              <Corner />
+            </span>
+            <span className={css.bottom_right}>
+              <Corner />
+            </span>
+            <span className={css.dots_top}>
+              <Dot />
+              <Dot />
+            </span>
+            <span className={css.dots_bottom}>
+              <Dot />
+              <Dot />
+            </span>
+          </div>
+        </div>
+
         <div className={css.container_dots_bottom}>
           <Dot />
           <Dot />
