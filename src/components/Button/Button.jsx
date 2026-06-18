@@ -25,8 +25,10 @@ export default function Button({
   children,
   type = "primary", // primary | secondary
   colorBg = "blue", // blue | white
+  isTextBlack = false,
   icon,
   img,
+  isWide = false,
 }) {
   let appliedStylesButton;
   let appliedStylesIcon;
@@ -36,12 +38,16 @@ export default function Button({
       backgroundColor: "var(--color-button-primary)",
       color: "var(--color-text-light)",
       stroke: "var(--color-text-light)",
+      width: isWide ? "100%" : "auto",
     };
   } else if (colorBg === "white") {
     appliedStylesButton = {
       backgroundColor: "var(--color-button-secondary)",
-      color: "var(--color-text-accent-primary)",
+      color: isTextBlack
+        ? "var(--color-text-black)"
+        : "var(--color-text-accent-primary)",
       stroke: "var(--color-text-accent-primary)",
+      width: isWide ? "100%" : "auto",
     };
   } else return null;
 

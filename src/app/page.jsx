@@ -7,6 +7,8 @@ import MenuMobile from "@/components/MenuMobile/MenuMobile";
 import VideoSection from "@/components/_SECTIONS/VideoSection/VideoSection";
 import About from "@/components/_SECTIONS/About/About";
 import Process from "@/components/_SECTIONS/Process/Process";
+import Portfolio from "@/components/_SECTIONS/Portfolio/Portfolio";
+import Banner from "@/components/_SECTIONS/Banner/Banner";
 
 // #endregion ===========================
 
@@ -15,11 +17,12 @@ export default function Home() {
     <>
       <Header />
       <MenuMobile />
-
       <Hero />
       <VideoSection />
       <About />
       <Process />
+      <Portfolio />
+      <Banner/>
     </>
   );
 }

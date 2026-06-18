@@ -72,9 +72,10 @@ export default function Process() {
     <section className={css.section}>
       <div className={css.top}>
         <Tag>Process</Tag>
+
         <h2 className={`f_h1 ${css.title}`}>
           Innovative Manufacturing: Fast and{" "}
-          <Image src={img_title} alt="CNC" className={css.img_title} />
+          <Image src={img_title} alt="easy" className={css.img_title} />
         </h2>
         {/* text */}
         <ul className={css.list_text}>

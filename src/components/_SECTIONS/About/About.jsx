@@ -72,7 +72,7 @@ export default function About() {
         {/* title */}
         <h2 className={`f_h1 ${css.title}`}>
           Revolutionizing Manufacturing with Speed and{" "}
-          <Image src={img_title} alt="CNC" className={css.img_title} />
+          <Image src={img_title} alt="precision" className={css.img_title} />
         </h2>
 
         {/* text */}

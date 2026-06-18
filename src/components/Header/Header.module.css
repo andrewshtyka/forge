@@ -6,11 +6,6 @@
   position: fixed;
   z-index: 10;
 
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: space-between; */
-
-  /* mix-blend-mode: difference; */
   color: var(--color-text-light);
 }
 

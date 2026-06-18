@@ -8,6 +8,8 @@
 import img_ceo from "@/assets/images/ceo.webp";
 
 // components
+import Image from "next/image";
+import Divider from "@/components/Divider/Divider";
 
 // constants
 
@@ -20,7 +22,6 @@ import css from "./Quote.module.css";
 
 // utility
 import React from "react";
-import Image from "next/image";
 
 // #endregion ===========================
 
@@ -57,12 +58,16 @@ export default function Quote() {
 
         {/* bottom */}
         <div className={css.bottom}>
-          <div className={css.divider}></div>
+          <span className={css.divider}>
+            <Divider />
+          </span>
           <p className={`f_description f_uppercase ${css.description_bottom}`}>
             Every detail matters — we craft each part with care accuracy, and a
             finish that feels just right
           </p>
-          <div className={css.divider}></div>
+          <span className={css.divider}>
+            <Divider />
+          </span>
         </div>
       </div>
     </article>

@@ -5,6 +5,7 @@
 // animation
 
 // components
+import Divider from "@/components/Divider/Divider";
 
 // constants
 
@@ -23,7 +24,7 @@ import React from "react";
 export default function ListItem({ children, num, icon }) {
   return (
     <li>
-      <div className={css.divider}></div>
+      <Divider />
 
       <button type="button" className={css.item}>
         {/* left */}

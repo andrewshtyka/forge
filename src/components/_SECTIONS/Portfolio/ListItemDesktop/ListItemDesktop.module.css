@@ -1,0 +1,23 @@
+.item {
+  padding-block: var(--space-10);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+  overflow-x: hidden;
+}
+
+.title {
+  color: var(--color-text-light);
+}
+
+.text {
+  color: var(--color-text-gray);
+}
+
+.container_icon {
+  position: absolute;
+  right: calc(100% + var(--offset-primary));
+}

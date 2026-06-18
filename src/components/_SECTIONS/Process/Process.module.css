@@ -1,9 +1,13 @@
 .section {
-  margin-block-end: var(--offset-sections);
-
+  margin-block-end: var(--space-0);
   position: relative;
-
   padding-block-start: var(--space-0);
+}
+
+@media (width >= 768px) {
+  .section {
+    margin-block-end: var(--offset-primary);
+  }
 }
 
 @media (width >= 1200px) {

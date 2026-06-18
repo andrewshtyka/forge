@@ -99,8 +99,7 @@
 }
 
 .divider {
-  height: var(--space-px);
-  background-color: var(--color-gray-900);
+  display: initial;
 }
 
 @media (width >= 1200px) {
