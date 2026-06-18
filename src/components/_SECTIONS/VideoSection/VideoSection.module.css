@@ -78,7 +78,10 @@
   display: flex;
   column-gap: var(--space-1);
   height: var(--space-8);
-  width: auto;
+
+  & svg {
+    width: auto;
+  }
 }
 
 @media (width >= 1200px) {
