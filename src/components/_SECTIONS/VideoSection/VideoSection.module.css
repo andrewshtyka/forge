@@ -6,7 +6,6 @@
 
   margin-block-end: var(--offset-sections);
   overflow-x: hidden;
-
 }
 
 .video {
@@ -79,6 +78,7 @@
   display: flex;
   column-gap: var(--space-1);
   height: var(--space-8);
+  width: fit-content;
 }
 
 @media (width >= 1200px) {

@@ -46,7 +46,7 @@ export default function Header() {
 
       {/* address - desktop */}
       <address className={`f_body ${css.address}`}>
-        <IconLocation color="light" size={20} stroke={1.2} />
+        <IconLocation color="white" size={20} stroke={1.2} />
         Canada, Montreal
       </address>
 

@@ -1,5 +1,4 @@
 .section {
-  padding-inline: var(--offset-primary);
   margin-block-end: var(--offset-sections);
 
   position: relative;
@@ -13,9 +12,13 @@
   }
 }
 
+.top {
+  padding-inline: var(--offset-primary);
+}
+
 .title {
   text-align: left;
-  max-width: 15ch;
+  max-width: 10ch;
 
   /* Viewport: 320 - 1920 */
   margin-block-end: clamp(3rem, 2.1rem + 4.5vw, 7.5rem); /* 48 - 120 */
@@ -33,6 +36,8 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
+
+  margin-block-end: var(--space-10);
 }
 
 @media (width >= 768px) {

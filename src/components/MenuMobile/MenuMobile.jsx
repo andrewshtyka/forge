@@ -71,7 +71,7 @@ export default function MenuMobile() {
       <div className={css.container_top}>
         {/* address */}
         <address className={`f_body ${css.address}`}>
-          <IconLocation color="light" />
+          <IconLocation color="white" />
           Canada, Montreal
         </address>
 

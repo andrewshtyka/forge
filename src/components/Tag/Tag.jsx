@@ -24,9 +24,9 @@ import React from "react";
 export default function Tag({ children }) {
   return (
     <div className={css.tag}>
-      <Dot size="small" />
+      <Dot />
       <h4 className="f_h4">{children}</h4>
-      <Dot size="small" />
+      <Dot />
     </div>
   );
 }

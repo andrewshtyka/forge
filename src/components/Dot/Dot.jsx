@@ -20,7 +20,7 @@ import React from "react";
 
 // #endregion ===========================
 
-export default function Dot({ color = "white", size = "big" }) {
+export default function Dot({ color = "white", size = "small" }) {
   let backgroundColor;
   let width;
 

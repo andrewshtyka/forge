@@ -3,6 +3,8 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, min-content);
   height: auto;
+
+  row-gap: var(--offset-primary);
 }
 
 @media (width >= 768px) {
@@ -25,7 +27,6 @@
   display: flex;
   column-gap: var(--space-11);
   align-items: center;
-  padding-block-end: var(--space-4);
 }
 
 @media (width >= 768px) {
@@ -63,7 +64,7 @@
 
   display: flex;
   flex-direction: column;
-  row-gap: var(--space-6);
+  row-gap: var(--offset-primary);
 }
 
 @media (width >= 768px) {
@@ -94,7 +95,7 @@
 .bottom {
   display: flex;
   flex-direction: column;
-  row-gap: var(--space-6);
+  row-gap: var(--offset-primary);
 }
 
 .divider {
