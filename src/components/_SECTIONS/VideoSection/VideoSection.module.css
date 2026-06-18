@@ -18,7 +18,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 100dvh;
+  height: 100svh;
   width: 105dvw;
   object-fit: cover;
 }
@@ -78,7 +78,7 @@
   display: flex;
   column-gap: var(--space-1);
   height: var(--space-8);
-  width: fit-content;
+  width: auto;
 }
 
 @media (width >= 1200px) {
