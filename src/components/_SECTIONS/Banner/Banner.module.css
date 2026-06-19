@@ -1,7 +1,8 @@
 .section {
   background-color: var(--color-bg-accent);
   padding-inline: var(--offset-primary);
-  padding-block: var(--offset-sections);
+  padding-block-start: var(--offset-sections);
+  padding-block-end: calc(var(--offset-sections) * 1.4);
 
   display: flex;
   flex-direction: column;

@@ -27,7 +27,6 @@ export default function IconArrow({
 }) {
   let width;
   let height;
-
   if (size === "small") {
     width = 12;
     height = 10;

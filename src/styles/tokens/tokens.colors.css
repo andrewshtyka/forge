@@ -10,8 +10,10 @@
 
   /* accent */
   --color-blue-0: hsl(var(--hue), 76%, 48%);
+  --color-blue-700: hsl(var(--hue), 65%, 67%);
   --color-blue-850: hsl(var(--hue), 65%, 57%);
   --color-blue-900: hsl(var(--hue), 100%, 84%);
+  /* 748CE3 */
 
   /* ================================================== */
   /* */

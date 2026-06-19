@@ -61,7 +61,7 @@ export default function LinkText({
   const appliedClasses = `${appliedClassType} ${appliedClassUnderline}`;
 
   return (
-    <Link href="#" className={`f_body ${appliedClasses}`} style={appliedStyles}>
+    <Link href="#" className={appliedClasses} style={appliedStyles}>
       {children}
     </Link>
   );
