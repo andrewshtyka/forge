@@ -23,23 +23,25 @@ import React from "react";
 
 export default function LinkText({
   children,
-  color = "black",
+  color = "white",
   hasUnderline = true,
   type = "desktop",
+  el: Wrapper = Link,
+  href = "#",
 }) {
   // color
   let appliedStyles;
-  if ((color = "white")) {
+  if (color === "white") {
     appliedStyles = {
       color: "var(--color-text-light)",
       textDecorationColor: "var(--color-text-light)",
     };
-  } else if ((color = "black")) {
+  } else if (color === "black") {
     appliedStyles = {
       color: "var(--color-text-dark)",
       textDecorationColor: "var(--color-text-dark)",
     };
-  } else if ((color = "blue")) {
+  } else if (color === "blue") {
     appliedStyles = {
       color: "var(--color-text-accent-primary)",
       textDecorationColor: "var(--color-accent-primary)",
@@ -60,9 +62,19 @@ export default function LinkText({
   // final classes
   const appliedClasses = `${appliedClassType} ${appliedClassUnderline}`;
 
+  // external
+
+  const options =
+    Wrapper === "a" ? { target: "_blank", rel: "noopener noreferrer" } : {};
+
   return (
-    <Link href="#" className={appliedClasses} style={appliedStyles}>
+    <Wrapper
+      href={href}
+      className={appliedClasses}
+      style={appliedStyles}
+      {...options}
+    >
       {children}
-    </Link>
+    </Wrapper>
   );
 }

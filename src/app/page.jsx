@@ -10,6 +10,7 @@ import Process from "@/components/_SECTIONS/Process/Process";
 import Portfolio from "@/components/_SECTIONS/Portfolio/Portfolio";
 import Banner from "@/components/_SECTIONS/Banner/Banner";
 import Manufacture from "@/components/_SECTIONS/Manufacture/Manufacture";
+import Footer from "@/components/_SECTIONS/Footer/Footer";
 
 // #endregion ===========================
 
@@ -25,6 +26,7 @@ export default function Home() {
       <Portfolio />
       <Banner />
       <Manufacture />
+      <Footer />
     </>
   );
 }

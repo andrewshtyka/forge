@@ -13,7 +13,7 @@ import Image from "next/image";
 import IconArrow from "@/components/Icons/IconArrow/IconArrow";
 import DotsBG from "@/components/DotsBG/DotsBG";
 import Button from "@/components/Button/Button";
-import Sequence from "@/components/Sequence/Sequence";
+import Sequence from "@/components/_SECTIONS/Hero/Sequence/Sequence";
 
 // constants
 
