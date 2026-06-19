@@ -15,8 +15,6 @@ import {
   LayoutGroup,
   useAnimationFrame,
   cubicBezier,
-  motionValue,
-  transformValue,
 } from "motion/react";
 
 // components
@@ -54,15 +52,18 @@ const images = [
 const INTERVAL = 1500;
 
 export default function Sequence() {
-  const [order, setOrder] = React.useState(() => images.map((img) => img.key));
-  const elapsed = React.useRef(1500);
+  const [orderArr, setOrderArr] = React.useState(() =>
+    images.map((img) => img.key),
+  );
+  const elapsed = React.useRef(INTERVAL);
 
+  // puts item from first to last container
   useAnimationFrame((_, delta) => {
     elapsed.current += delta;
 
     if (elapsed.current >= INTERVAL) {
       elapsed.current = 0;
-      setOrder((prev) => {
+      setOrderArr((prev) => {
         const [first, ...rest] = prev;
         return [...rest, first];
       });
@@ -73,16 +74,16 @@ export default function Sequence() {
     <LayoutGroup>
       {images.map((_, index) => {
         const containerKey = index + 1;
-        const imgId = order[index];
-        const src = images[imgId - 1].src;
+        const imgKey = orderArr[index];
+        const src = images[imgKey - 1].src;
 
         const target = getImageAnimationStyles(containerKey);
 
         return (
           <li key={containerKey} className={css.container}>
             <MotionImage
-              key={imgId}
-              layoutId={`image-${imgId}`}
+              key={imgKey}
+              layoutId={`image-${imgKey}`}
               layout={true}
               src={src}
               alt="Detail"
@@ -98,6 +99,7 @@ export default function Sequence() {
   );
 }
 
+// styles for animation
 function getImageAnimationStyles(containerKey) {
   const isMiddle = containerKey === 6;
   const isFirstNearMiddle = containerKey === 5 || containerKey === 7;
@@ -116,7 +118,7 @@ function getImageAnimationStyles(containerKey) {
 
   if (isFirstNearMiddle)
     return {
-      style: { scale: 0.8, opacity: 1 },
+      style: { scale: 0.75, opacity: 1 },
       transition,
     };
 
