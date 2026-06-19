@@ -30,10 +30,15 @@
 
 .img_title {
   /* Viewport: 320 - 1920 */
-  height: clamp(2rem, 1.3rem + 3.5vw, 5.5rem); /* 32 - 88 */
+  height: clamp(2rem, 8vmin, 5.5rem);
   width: auto;
   position: relative;
-  margin-inline: calc(var(--img-title-margin) * 0.2);
+}
+
+@media (width >= 1200px) {
+  .img_title {
+    height: clamp(3.5rem, 8vmin, 4.5rem);
+  }
 }
 
 .list_text {

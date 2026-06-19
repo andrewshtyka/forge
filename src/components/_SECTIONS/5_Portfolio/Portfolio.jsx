@@ -110,7 +110,7 @@ export default function Portfolio() {
 
       <h2 className={`f_h1 ${css.title}`}>
         Check Our Latest{" "}
-        <Image src={img_title} alt="works" className={css.img_title} />
+        <Image src={img_title} alt="Works" className={css.img_title} />
       </h2>
 
       <span className={css.desktop}>

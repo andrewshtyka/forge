@@ -71,8 +71,8 @@ export default function About() {
       <div className={css.content_left}>
         {/* title */}
         <h2 className={`f_h1 ${css.title}`}>
-          Revolutionizing Manufacturing with Speed and{" "}
-          <Image src={img_title} alt="precision" className={css.img_title} />
+          Revolutionizing Manufacturing with Speed &{" "}
+          <Image src={img_title} alt="Precision" className={css.img_title} />
         </h2>
 
         {/* text */}

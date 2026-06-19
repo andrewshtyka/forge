@@ -29,6 +29,7 @@ export default function Button({
   icon,
   img,
   isWide = false,
+  onClick,
 }) {
   let appliedStylesButton;
   let appliedStylesIcon;
@@ -57,6 +58,7 @@ export default function Button({
         type="button"
         className={`f_description f_uppercase ${css.button}`}
         style={appliedStylesButton}
+        onClick={onClick}
       >
         <span>
           <span className={css.icon} style={appliedStylesIcon}>
@@ -76,6 +78,7 @@ export default function Button({
         type="button"
         className={`f_description f_uppercase ${css.button}`}
         style={appliedStylesButton}
+        onClick={onClick}
       >
         {children}
         {icon}

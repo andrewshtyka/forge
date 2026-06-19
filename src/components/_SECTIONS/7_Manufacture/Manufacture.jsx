@@ -33,6 +33,8 @@ import css from "./Manufacture.module.css";
 // utility
 import React from "react";
 
+// #endregion ===========================
+
 const listItems = [
   {
     key: 1,
@@ -196,8 +198,6 @@ const listItems = [
   },
 ];
 
-// #endregion ===========================
-
 export default function Manufacture() {
   return (
     <section className={css.section}>
@@ -210,7 +210,7 @@ export default function Manufacture() {
         {/* title */}
         <h2 className={`f_h1 ${css.title}`}>
           The Most Popular{" "}
-          <Image src={img_title} alt="precision" className={css.img_title} /> We
+          <Image src={img_title} alt="Details" className={css.img_title} /> We
           Produce
         </h2>
 

@@ -13,7 +13,7 @@ import Image from "next/image";
 import IconArrow from "@/components/Icons/IconArrow/IconArrow";
 import DotsBG from "@/components/DotsBG/DotsBG";
 import Button from "@/components/Button/Button";
-import Sequence from "@/components/_SECTIONS/Hero/Sequence/Sequence";
+import Sequence from "@/components/_SECTIONS/1_Hero/Sequence/Sequence";
 
 // constants
 
@@ -38,16 +38,16 @@ export default function Hero() {
       {/* title */}
       <div className={css.container_title}>
         <h1 className={`f_h1 ${css.title}`}>
-          Precision
-          <Image src={img_title} alt="CNC" className={css.img_title} />
-          Parts Shipped as Fast as Tomorrow
+          Precision{" "}
+          <Image src={img_title} alt="CNC" className={css.img_title} /> Parts
+          Shipped as Fast as Tomorrow
         </h1>
       </div>
 
       {/* animated images */}
-      <div className={css.container_sequence}>
+      <ul className={css.container_sequence}>
         <Sequence />
-      </div>
+      </ul>
 
       {/* bottom */}
       <div className={css.container_bottom}>

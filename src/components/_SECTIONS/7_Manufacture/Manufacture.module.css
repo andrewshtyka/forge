@@ -21,11 +21,16 @@
 
 .img_title {
   /* Viewport: 320 - 1920 */
-  height: clamp(1.625rem, 1.05rem + 2.875vw, 4.5rem); /* 26 - 72 */
+  height: clamp(1.625rem, 6.5vmin, 4.5rem); /* 26 - 72 */
   width: auto;
   position: relative;
   bottom: 0.13em;
-  margin-inline: calc(var(--img-title-margin) * 0.2);
+}
+
+@media (width >= 1200px) {
+  .img_title {
+    height: clamp(3rem, 6.5vmin, 4.5rem);
+  }
 }
 
 /* ================================================== */

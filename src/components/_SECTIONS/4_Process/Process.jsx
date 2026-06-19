@@ -75,7 +75,7 @@ export default function Process() {
 
         <h2 className={`f_h1 ${css.title}`}>
           Innovative Manufacturing: Fast and{" "}
-          <Image src={img_title} alt="easy" className={css.img_title} />
+          <Image src={img_title} alt="Easy" className={css.img_title} />
         </h2>
         {/* text */}
         <ul className={css.list_text}>
