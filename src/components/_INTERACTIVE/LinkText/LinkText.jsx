@@ -3,6 +3,7 @@
 // #region ============================== Imports
 
 // animation
+import { motion, cubicBezier } from "motion/react";
 
 // components
 import Link from "next/link";
@@ -29,52 +30,91 @@ export default function LinkText({
   el: Wrapper = Link,
   href = "#",
 }) {
-  // color
-  let appliedStyles;
+  const [isHovered, setIsHovered] = React.useState(false);
+
+  // style for link: color text and underline
+  let colorText;
+  let colorBg;
   if (color === "white") {
-    appliedStyles = {
-      color: "var(--color-text-light)",
-      textDecorationColor: "var(--color-text-light)",
-    };
+    colorText = "var(--color-text-light)";
+    colorBg = "var(--color-text-light)";
   } else if (color === "black") {
-    appliedStyles = {
-      color: "var(--color-text-dark)",
-      textDecorationColor: "var(--color-text-dark)",
-    };
+    colorText = "var(--color-text-dark)";
+    colorBg = "var(--color-text-dark)";
   } else if (color === "blue") {
-    appliedStyles = {
-      color: "var(--color-text-accent-primary)",
-      textDecorationColor: "var(--color-accent-primary)",
-    };
+    colorBg = "var(--color-text-accent-primary)";
+    colorText = "var(--color-text-accent-primary)";
   } else return null;
 
-  // size
-  let appliedClassType;
-  if (type === "desktop") {
-    appliedClassType = "f_body";
-  } else if (type === "mobile") {
-    appliedClassType = "f_menu";
-  } else return null;
-
-  // underline
-  const appliedClassUnderline = hasUnderline ? `${css.hasUnderline}` : " ";
-
-  // final classes
-  const appliedClasses = `${appliedClassType} ${appliedClassUnderline}`;
-
-  // external
-
-  const options =
+  // attributes for link: if <a> make external, if Link - add nothing
+  const attributes =
     Wrapper === "a" ? { target: "_blank", rel: "noopener noreferrer" } : {};
+
+  // class for Text: size of text
+  let textSizeClass;
+  if (type === "desktop") {
+    textSizeClass = "f_body";
+  } else if (type === "mobile") {
+    textSizeClass = "f_menu";
+  } else return null;
 
   return (
     <Wrapper
       href={href}
-      className={appliedClasses}
-      style={appliedStyles}
-      {...options}
+      style={{
+        color: colorText,
+        pointerEvents: hasUnderline ? "initial" : "none",
+      }}
+      className={css.link}
+      {...attributes}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      {children}
+      <span className={`${css.text} ${textSizeClass}`}>
+        {children}
+
+        {/* desktop line - animates */}
+        {hasUnderline && (
+          <motion.span
+            className={css.underline}
+            initial={animUnderline.initial}
+            animate={{
+              height: isHovered ? "calc(100% + 0.075em)" : "5%",
+              width: isHovered ? "calc(100% + 0.5em)" : "100%",
+            }}
+            transition={
+              isHovered
+                ? animUnderline.transition_start
+                : animUnderline.transition_end
+            }
+          ></motion.span>
+        )}
+
+        {/* mobile line - DOESN'T animates */}
+        {hasUnderline && (
+          <motion.span
+            className={css.underline_mob}
+            style={{ backgroundColor: colorBg }}
+          ></motion.span>
+        )}
+      </span>
     </Wrapper>
   );
 }
+
+const animUnderline = {
+  initial: {
+    height: "5%",
+    width: "100%",
+    x: "-50%",
+  },
+  transition_start: {
+    duration: 0.75,
+    type: "spring",
+    bounce: 0.5,
+  },
+  transition_end: {
+    duration: 0.3,
+    ease: cubicBezier(0.5, 0, 0.3, 1),
+  },
+};

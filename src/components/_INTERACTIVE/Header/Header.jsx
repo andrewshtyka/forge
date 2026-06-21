@@ -39,10 +39,10 @@ export default function Header() {
       style={{ mixBlendMode: blendMode }}
     >
       {/* logo */}
-      <Link href="" className={css.container_logo}>
+      <span className={css.container_logo}>
         <IconLogo />
         <p className="f_body">Forge</p>
-      </Link>
+      </span>
 
       {/* address - desktop */}
       <address className={`f_body ${css.address}`}>

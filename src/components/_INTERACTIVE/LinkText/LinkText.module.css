@@ -1,5 +1,55 @@
-.hasUnderline {
-  text-decoration: underline;
-  text-decoration-thickness: 0.05em;
-  text-underline-offset: 0.15em;
+.link {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 130%;
+    height: 300%;
+    cursor: pointer;
+  }
+}
+
+.text {
+  position: relative;
+  text-wrap: nowrap;
+}
+
+.underline {
+  display: none;
+}
+
+@media (width >= 1200px) {
+  .underline {
+    position: absolute;
+    bottom: -0.075em;
+    left: 50%;
+    right: 0;
+
+    display: inline-block;
+    background-color: var(--color-bg-primary);
+    mix-blend-mode: difference;
+
+    border-radius: var(--border-radius-secondary);
+  }
+}
+
+.underline_mob {
+  position: absolute;
+  bottom: -0.05em;
+  left: 0;
+  right: 0;
+  display: inline-block;
+
+  width: 100%;
+  height: 5%;
+}
+
+@media (width >= 1200px) {
+  .underline_mob {
+    display: none;
+  }
 }
