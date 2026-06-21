@@ -120,6 +120,11 @@ export default function Button({
         <motion.span
           className={css.element}
           animate={{ transform: `rotate(${isHovered ? "-45deg" : "0deg"})` }}
+          transition={
+            isHovered
+              ? animBtnSecondary.transition_start
+              : animBtnSecondary.transition_end
+          }
         >
           {icon}
         </motion.span>
