@@ -3,7 +3,7 @@
 // #region ============================== Imports
 
 // animation
-import { motion } from "motion/react";
+import { AnimatePresence, motion, cubicBezier } from "motion/react";
 
 // assets
 import poster from "@/assets/images/video_poster.webp";
@@ -28,6 +28,8 @@ import css from "./VideoSection.module.css";
 import React from "react";
 
 // #endregion ===========================
+
+export const MotionImage = motion.create(Image);
 
 export default function VideoSection() {
   // video
@@ -91,56 +93,82 @@ export default function VideoSection() {
       />
 
       {/* poster */}
-      {isVisible && <Image src={poster} alt="Details" className={css.img} />}
+      <AnimatePresence mode="wait">
+        {isVisible && (
+          <MotionImage
+            src={poster}
+            alt="Details"
+            className={css.img}
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.75 }}
+          />
+        )}
+      </AnimatePresence>
 
       {/* dots */}
-      {isVisible && (
-        <div className={css.container_dots}>
-          <Dot />
-          <Dot />
-        </div>
-      )}
+      <AnimatePresence mode="wait">
+        {isVisible && (
+          <motion.div
+            className={css.container_dots}
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <Dot />
+            <Dot />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* button wrapper - fullscreen */}
-      {isVisible && (
-        <motion.button
-          ref={containerRef}
-          type="button"
-          className={css.button}
-          onClick={playVideo}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          onFocus={() => setIsHovered(true)}
-          onBlur={() => setIsHovered(false)}
-        >
-          {/* button */}
-          <motion.span
-            ref={btnRef}
-            className={css.content_button}
-            style={{ x, y }}
-            initial={{ opacity: 0 }}
-            whileInView={{
-              opacity: 1,
-              transition: { duration: 0.1, delay: 0.5 },
-            }}
-            viewport={{ once: true }}
+      <AnimatePresence mode="wait">
+        {isVisible && (
+          <motion.button
+            ref={containerRef}
+            type="button"
+            className={css.button}
+            onClick={playVideo}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onFocus={() => setIsHovered(true)}
+            onBlur={() => setIsHovered(false)}
           >
-            <IconPlay />
-          </motion.span>
-        </motion.button>
-      )}
+            {/* button */}
+            <motion.span
+              ref={btnRef}
+              className={css.content_button}
+              style={{ x, y }}
+              initial={{ opacity: 0, scale: 1 }}
+              whileInView={{
+                opacity: 1,
+                transition: { duration: 0.1, delay: 0.5 },
+              }}
+              viewport={{ once: true }}
+              exit={{ scale: 0 }}
+            >
+              <IconPlay />
+            </motion.span>
+          </motion.button>
+        )}
+      </AnimatePresence>
 
       {/* info */}
-      {isVisible && (
-        <div className={css.info}>
-          <span className={`f_body ${css.time}`}>00:00</span>
-          <span className={css.container_logo}>
-            <IconLogo size="100%" />
-            <IconLogo size="100%" />
-          </span>
-          <span className={`f_body ${css.time}`}>04:15</span>
-        </div>
-      )}
+      <AnimatePresence mode="wait">
+        {isVisible && (
+          <motion.div
+            className={css.info}
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <span className={`f_body ${css.time}`}>00:00</span>
+            <span className={css.container_logo}>
+              <IconLogo size="100%" />
+              <IconLogo size="100%" />
+            </span>
+            <span className={`f_body ${css.time}`}>04:15</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
