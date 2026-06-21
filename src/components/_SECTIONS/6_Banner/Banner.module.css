@@ -47,6 +47,8 @@
 
 .container_btn {
   padding-inline: var(--space-0);
+  display: flex;
+  justify-content: center;
 }
 
 @media (width >= 768px) {

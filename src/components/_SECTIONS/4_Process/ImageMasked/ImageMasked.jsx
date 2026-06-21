@@ -6,8 +6,8 @@
 
 // components
 import Image from "next/image";
-import Dot from "@/components/Dot/Dot";
-import Corner from "@/components/Icons/Corner/Corner";
+import Dot from "@/components/_NOT_INTERACTIVE/Dot/Dot";
+import Corner from "@/components/_NOT_INTERACTIVE/Icons/Corner/Corner";
 
 // constants
 

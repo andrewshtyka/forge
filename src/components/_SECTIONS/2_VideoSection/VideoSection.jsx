@@ -9,8 +9,8 @@ import poster from "@/assets/images/video_poster.webp";
 
 // components
 import Image from "next/image";
-import IconPlay from "@/components/Icons/IconPlay/IconPlay";
-import IconLogo from "@/components/Icons/IconLogo/IconLogo";
+import IconPlay from "@/components/_NOT_INTERACTIVE/Icons/IconPlay/IconPlay";
+import IconLogo from "@/components/_NOT_INTERACTIVE/Icons/IconLogo/IconLogo";
 
 // constants
 
@@ -24,7 +24,7 @@ import css from "./VideoSection.module.css";
 // utility
 import React from "react";
 import { div } from "motion/react-client";
-import Dot from "@/components/Dot/Dot";
+import Dot from "@/components/_NOT_INTERACTIVE/Dot/Dot";
 
 // #endregion ===========================
 

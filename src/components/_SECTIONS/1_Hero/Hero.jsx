@@ -10,9 +10,9 @@ import img_icon from "@/assets/images/mesh.webp";
 
 // components
 import Image from "next/image";
-import IconArrow from "@/components/Icons/IconArrow/IconArrow";
-import DotsBG from "@/components/DotsBG/DotsBG";
-import Button from "@/components/Button/Button";
+import IconArrow from "@/components/_NOT_INTERACTIVE/Icons/IconArrow/IconArrow";
+import DotsBG from "@/components/_NOT_INTERACTIVE/DotsBG/DotsBG";
+import Button from "@/components/_INTERACTIVE/Button/Button";
 import Sequence from "@/components/_SECTIONS/1_Hero/Sequence/Sequence";
 
 // constants

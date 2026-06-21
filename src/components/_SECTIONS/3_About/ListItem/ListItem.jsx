@@ -5,7 +5,7 @@
 // animation
 
 // components
-import Divider from "@/components/Divider/Divider";
+import Divider from "@/components/_NOT_INTERACTIVE/Divider/Divider";
 
 // constants
 

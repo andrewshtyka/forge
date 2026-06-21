@@ -9,7 +9,7 @@ import img_ceo from "@/assets/images/ceo.webp";
 
 // components
 import Image from "next/image";
-import Divider from "@/components/Divider/Divider";
+import Divider from "@/components/_NOT_INTERACTIVE/Divider/Divider";
 
 // constants
 

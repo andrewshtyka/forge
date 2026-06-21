@@ -1,9 +1,9 @@
 // #region ============================== Imports
 
 // components
-import Header from "@/components/Header/Header";
+import Header from "@/components/_INTERACTIVE/Header/Header";
 import Hero from "@/components/_SECTIONS/1_Hero/Hero";
-import MenuMobile from "@/components/MenuMobile/MenuMobile";
+import MenuMobile from "@/components/_INTERACTIVE/MenuMobile/MenuMobile";
 import VideoSection from "@/components/_SECTIONS/2_VideoSection/VideoSection";
 import About from "@/components/_SECTIONS/3_About/About";
 import Process from "@/components/_SECTIONS/4_Process/Process";

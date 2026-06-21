@@ -12,14 +12,14 @@ import list_img_3 from "@/assets/images/list_img_3.webp";
 import list_img_4 from "@/assets/images/list_img_4.webp";
 
 // components
-import Tag from "@/components/Tag/Tag";
+import Tag from "@/components/_NOT_INTERACTIVE/Tag/Tag";
 import Image from "next/image";
 import ListItem from "./ListItem/ListItem";
-import IconPlate from "@/components/Icons/IconPlate/IconPlate";
-import IconConnector from "@/components/Icons/IconConnector/IconConnector";
-import IconJoint from "@/components/Icons/IconJoint/IconJoint";
-import IconShaft from "@/components/Icons/IconShaft/IconShaft";
-import Dot from "@/components/Dot/Dot";
+import IconPlate from "@/components/_NOT_INTERACTIVE/Icons/IconPlate/IconPlate";
+import IconConnector from "@/components/_NOT_INTERACTIVE/Icons/IconConnector/IconConnector";
+import IconJoint from "@/components/_NOT_INTERACTIVE/Icons/IconJoint/IconJoint";
+import IconShaft from "@/components/_NOT_INTERACTIVE/Icons/IconShaft/IconShaft";
+import Dot from "@/components/_NOT_INTERACTIVE/Dot/Dot";
 import Quote from "./Quote/Quote";
 
 // constants

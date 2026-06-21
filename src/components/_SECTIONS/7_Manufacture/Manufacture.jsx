@@ -15,10 +15,10 @@ import img_5 from "@/assets/images/container_5_cap.webp";
 import img_title from "@/assets/images/title_details.webp";
 
 // components
-import Tag from "@/components/Tag/Tag";
+import Tag from "@/components/_NOT_INTERACTIVE/Tag/Tag";
 import Image from "next/image";
 import CardProduct from "./CardProduct/CardProduct";
-import DotsBG from "@/components/DotsBG/DotsBG";
+import DotsBG from "@/components/_NOT_INTERACTIVE/DotsBG/DotsBG";
 import CardUpload from "./CardUpload/CardUpload";
 
 // constants

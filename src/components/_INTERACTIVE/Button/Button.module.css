@@ -1,0 +1,37 @@
+.button {
+  padding: var(--space-8);
+  height: var(--space-15);
+  border-radius: var(--border-radius-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  grid-template-rows: min-content;
+  align-items: center;
+  column-gap: var(--space-4);
+  background-color: inherit;
+}
+
+.element {
+  grid-row: 1 / -1;
+  display: inline-flex;
+  text-wrap: nowrap;
+  background-color: inherit;
+  align-items: center;
+}
+
+.end {
+  justify-content: flex-end;
+}
+
+.img {
+  & img {
+    height: var(--space-12);
+    width: auto;
+  }
+}

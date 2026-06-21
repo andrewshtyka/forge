@@ -5,9 +5,9 @@
 // animation
 
 // components
-import IconLogo from "@/components/Icons/IconLogo/IconLogo";
-import IconArrow from "@/components/Icons/IconArrow/IconArrow";
-import Button from "@/components/Button/Button";
+import IconLogo from "@/components/_NOT_INTERACTIVE/Icons/IconLogo/IconLogo";
+import IconArrow from "@/components/_NOT_INTERACTIVE/Icons/IconArrow/IconArrow";
+import Button from "@/components/_INTERACTIVE/Button/Button";
 
 // constants
 

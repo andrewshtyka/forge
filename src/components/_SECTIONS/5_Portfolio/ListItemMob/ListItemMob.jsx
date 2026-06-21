@@ -6,8 +6,8 @@
 
 // components
 import Link from "next/link";
-import IconArrow from "@/components/Icons/IconArrow/IconArrow";
-import Divider from "@/components/Divider/Divider";
+import IconArrow from "@/components/_NOT_INTERACTIVE/Icons/IconArrow/IconArrow";
+import Divider from "@/components/_NOT_INTERACTIVE/Divider/Divider";
 
 // constants
 

@@ -6,9 +6,9 @@
 import { motion } from "motion/react";
 
 // components
-import IconLocation from "../Icons/IconLocation/IconLocation";
-import LinkText from "../LinkText/LinkText";
-import DotsBG from "../DotsBG/DotsBG";
+import IconLocation from "@/components/_NOT_INTERACTIVE/Icons/IconLocation/IconLocation";
+import LinkText from "@/components/_INTERACTIVE/LinkText/LinkText";
+import DotsBG from "@/components/_NOT_INTERACTIVE/DotsBG/DotsBG";
 
 // constants
 import { ANIM_HEADER } from "@/constants/animation";

@@ -5,11 +5,11 @@
 // animation
 
 // components
-import IconLogo from "../Icons/IconLogo/IconLogo";
-import MenuButton from "../MenuButton/MenuButton";
+import IconLogo from "@/components/_NOT_INTERACTIVE/Icons/IconLogo/IconLogo";
+import MenuButton from "@/components/_INTERACTIVE/MenuButton/MenuButton";
 import Link from "next/link";
-import IconLocation from "../Icons/IconLocation/IconLocation";
-import LinkText from "../LinkText/LinkText";
+import IconLocation from "@/components/_NOT_INTERACTIVE/Icons/IconLocation/IconLocation";
+import LinkText from "@/components/_INTERACTIVE/LinkText/LinkText";
 
 // constants
 import { ANIM_HEADER } from "@/constants/animation";

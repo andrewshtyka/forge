@@ -5,8 +5,8 @@
 // animation
 
 // components
-import IconDetail from "@/components/Icons/IconDetail/IconDetail";
-import CornerLine from "@/components/Icons/CornerLine/CornerLine";
+import IconDetail from "@/components/_NOT_INTERACTIVE/Icons/IconDetail/IconDetail";
+import CornerLine from "@/components/_NOT_INTERACTIVE/Icons/CornerLine/CornerLine";
 import Link from "next/link";
 
 // constants

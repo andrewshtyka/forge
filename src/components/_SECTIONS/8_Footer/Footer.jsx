@@ -5,8 +5,8 @@
 // animation
 
 // components
-import Dot from "@/components/Dot/Dot";
-import LinkText from "@/components/LinkText/LinkText";
+import Dot from "@/components/_NOT_INTERACTIVE/Dot/Dot";
+import LinkText from "@/components/_INTERACTIVE/LinkText/LinkText";
 
 // constants
 

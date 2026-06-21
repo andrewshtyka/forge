@@ -9,12 +9,12 @@ import img_title from "@/assets/images/title_easy.webp";
 import img_process from "@/assets/images/img_process.webp";
 
 // components
-import Tag from "@/components/Tag/Tag";
+import Tag from "@/components/_NOT_INTERACTIVE/Tag/Tag";
 import Image from "next/image";
-import IconUpload from "@/components/Icons/IconUpload/IconUpload";
-import IconCheckout from "@/components/Icons/IconCheckout/IconCheckout";
-import IconMake from "@/components/Icons/IconMake/IconMake";
-import IconShipped from "@/components/Icons/IconShipped/IconShipped";
+import IconUpload from "@/components/_NOT_INTERACTIVE/Icons/IconUpload/IconUpload";
+import IconCheckout from "@/components/_NOT_INTERACTIVE/Icons/IconCheckout/IconCheckout";
+import IconMake from "@/components/_NOT_INTERACTIVE/Icons/IconMake/IconMake";
+import IconShipped from "@/components/_NOT_INTERACTIVE/Icons/IconShipped/IconShipped";
 import ListItem from "./ListItem/ListItem";
 import ImageMasked from "./ImageMasked/ImageMasked";
 

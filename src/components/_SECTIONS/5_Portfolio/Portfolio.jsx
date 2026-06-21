@@ -9,13 +9,13 @@ import img_title from "@/assets/images/title_works.webp";
 import img_icon from "@/assets/images/mesh.webp";
 
 // components
-import Tag from "@/components/Tag/Tag";
+import Tag from "@/components/_NOT_INTERACTIVE/Tag/Tag";
 import Image from "next/image";
 import ListItemMob from "./ListItemMob/ListItemMob";
 import ListItemDesktop from "./ListItemDesktop/ListItemDesktop";
-import Divider from "@/components/Divider/Divider";
-import Button from "@/components/Button/Button";
-import IconArrow from "@/components/Icons/IconArrow/IconArrow";
+import Divider from "@/components/_NOT_INTERACTIVE/Divider/Divider";
+import Button from "@/components/_INTERACTIVE/Button/Button";
+import IconArrow from "@/components/_NOT_INTERACTIVE/Icons/IconArrow/IconArrow";
 import Images from "./Images/Images";
 
 // constants

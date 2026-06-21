@@ -5,7 +5,7 @@
 // animation
 
 // components
-import Dot from "@/components/Dot/Dot";
+import Dot from "@/components/_NOT_INTERACTIVE/Dot/Dot";
 
 // constants
 
