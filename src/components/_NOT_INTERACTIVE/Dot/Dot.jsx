@@ -3,6 +3,7 @@
 // #region ============================== Imports
 
 // animation
+import { motion } from "motion/react";
 
 // components
 
@@ -20,7 +21,13 @@ import React from "react";
 
 // #endregion ===========================
 
-export default function Dot({ color = "white", size = "small" }) {
+export default function Dot({
+  color = "white",
+  size = "small",
+  initial = {},
+  animate = {},
+  transition = {},
+}) {
   let backgroundColor;
   let width;
 
@@ -33,5 +40,13 @@ export default function Dot({ color = "white", size = "small" }) {
   else if (size === "small") width = "var(--space-2)";
   else return null;
 
-  return <div className={css.dot} style={{ backgroundColor, width }}></div>;
+  return (
+    <motion.div
+      className={css.dot}
+      style={{ backgroundColor, width }}
+      initial={initial}
+      animate={animate}
+      transition={transition}
+    ></motion.div>
+  );
 }

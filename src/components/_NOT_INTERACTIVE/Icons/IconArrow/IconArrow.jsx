@@ -24,6 +24,7 @@ export default function IconArrow({
   size = "small",
   stroke = 1.2,
   color = "white",
+  ...rest
 }) {
   let width;
   let height;
@@ -48,6 +49,7 @@ export default function IconArrow({
       viewBox="0 0 12 10"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      {...rest}
     >
       <path
         d="M0.600098 4.84814H10.6001M6.8501 8.84814L10.6001 4.84814L6.8501 0.848145"

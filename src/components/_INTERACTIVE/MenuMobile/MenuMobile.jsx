@@ -51,7 +51,6 @@ export default function MenuMobile() {
     function getDeviceWidth() {
       if (window.innerWidth >= 1200) {
         setIsMobile(false);
-        console.log(window.innerWidth);
       } else {
         setIsMobile(true);
       }
@@ -76,7 +75,7 @@ export default function MenuMobile() {
     <RemoveScroll enabled={isMenuOpened}>
       <motion.article
         className={css.article}
-        initial={{ clipPath: "inset(0% 100% 100% 0%)" }}
+        initial={{ clipPath: "inset(0% 0% 100% 0%)" }}
         animate={{ clipPath: clipPathValue }}
         transition={{
           duration: ANIM_HEADER.menu.transition,

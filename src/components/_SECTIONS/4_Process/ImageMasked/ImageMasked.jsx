@@ -3,6 +3,7 @@
 // #region ============================== Imports
 
 // animation
+import { motion } from "motion/react";
 
 // components
 import Image from "next/image";
@@ -20,18 +21,29 @@ import css from "./ImageMasked.module.css";
 
 // utility
 import React from "react";
+import useParallax from "@/hooks/useParallax";
 
 // #endregion ===========================
 
+const MotionImage = motion.create(Image);
+
 export default function ImageMasked({ src, alt = "" }) {
+  const sectionRef = React.useRef(null);
+  const parallaxY = useParallax(sectionRef);
+
   return (
     <div className={css.container}>
-      <div className={css.border_radius}>
+      <div ref={sectionRef} className={css.border_radius}>
         <div className={css.container_dots_top}>
           <Dot />
           <Dot />
         </div>
-        <Image src={src} alt={alt} className={css.img} />
+        <MotionImage
+          src={src}
+          alt={alt}
+          className={css.img}
+          style={{ y: parallaxY }}
+        />
 
         {/* Masked Lines */}
         <div className={css.container_lines}>

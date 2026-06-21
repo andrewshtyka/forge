@@ -3,7 +3,7 @@
 // #region ============================== Imports
 
 // animation
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
 
 // assets
 import poster from "@/assets/images/video_poster.webp";
@@ -17,6 +17,7 @@ import ButtonFullScreen from "./ButtonFullScreen/ButtonFullScreen";
 // constants
 
 // hooks
+import useWindowDimensions from "@/hooks/useWindowDimensions";
 
 // providers / context
 
@@ -25,17 +26,20 @@ import css from "./VideoSection.module.css";
 
 // utility
 import React from "react";
+import useParallax from "@/hooks/useParallax";
 
 // #endregion ===========================
 
 export const MotionImage = motion.create(Image);
 
 export default function VideoSection() {
-  // video
   const [isVisible, setIsVisible] = React.useState(true);
   const sectionRef = React.useRef(null);
   const iframeRef = React.useRef(null);
   const hasStartedRef = React.useRef(false);
+
+  // video parallax
+  const parallaxY = useParallax(sectionRef);
 
   // hide poster and play youtube video
   function playVideo() {
@@ -96,6 +100,7 @@ export default function VideoSection() {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.75 }}
+            style={{ y: parallaxY }}
           />
         )}
       </AnimatePresence>

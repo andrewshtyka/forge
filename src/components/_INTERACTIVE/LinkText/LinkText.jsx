@@ -27,7 +27,7 @@ export default function LinkText({
   color = "white",
   hasUnderline = true,
   type = "desktop",
-  el: Wrapper = Link,
+  el: Tag = Link,
   href = "#",
   ...rest
 }) {
@@ -49,7 +49,7 @@ export default function LinkText({
 
   // attributes for link: if <a> make external, if Link - add nothing
   const attributesExternal =
-    Wrapper === "a" ? { target: "_blank", rel: "noopener noreferrer" } : {};
+    Tag === "a" ? { target: "_blank", rel: "noopener noreferrer" } : {};
 
   // element focusable (no underline = focusable)
   const attributesFocusable = hasUnderline ? {} : { tabIndex: "-1" };
@@ -63,7 +63,7 @@ export default function LinkText({
   } else return null;
 
   return (
-    <Wrapper
+    <Tag
       href={href}
       style={{
         color: colorText,
@@ -106,7 +106,7 @@ export default function LinkText({
           ></motion.span>
         )}
       </span>
-    </Wrapper>
+    </Tag>
   );
 }
 

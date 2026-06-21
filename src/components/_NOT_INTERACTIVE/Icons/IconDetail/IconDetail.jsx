@@ -13,7 +13,7 @@
 // providers / context
 
 // styles
-// import css from '.'
+import css from './IconDetail.module.css'
 
 // utility
 import React from "react";
@@ -44,6 +44,7 @@ export default function IconDetail({ color = "white", size = "default" }) {
       viewBox="0 0 178 190"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={css.svg}
     >
       <path
         fill={appliedColor}

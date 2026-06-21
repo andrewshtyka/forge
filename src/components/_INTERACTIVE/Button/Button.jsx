@@ -5,11 +5,12 @@
 // assets
 
 // animation
-import { motion, cubicBezier } from "motion/react";
+import { motion } from "motion/react";
 
 // components
 
 // constants
+import { ANIM_BTN_PRIMARY, ANIM_BTN_SECONDARY } from "@/constants/animation";
 
 // hooks
 
@@ -71,7 +72,7 @@ export default function Button({
             className={css.element}
             layout={true}
             style={{ gridColumn: isHovered ? "2 / -1" : "1 / 2" }}
-            transition={animBtnPrimary.text.transition}
+            transition={ANIM_BTN_PRIMARY.text.transition}
           >
             {icon}
           </motion.span>
@@ -79,7 +80,7 @@ export default function Button({
             className={css.element}
             layout={true}
             style={{ gridColumn: isHovered ? "1 / 2" : "2 / -1" }}
-            transition={animBtnPrimary.text.transition}
+            transition={ANIM_BTN_PRIMARY.text.transition}
           >
             {children}
           </motion.span>
@@ -88,7 +89,7 @@ export default function Button({
         <motion.span
           className={css.img}
           animate={{ transform: `rotate(${isHovered ? "30deg" : "0deg"})` }}
-          transition={animBtnPrimary.img.transition}
+          transition={ANIM_BTN_PRIMARY.img.transition}
         >
           {img}
         </motion.span>
@@ -109,22 +110,23 @@ export default function Button({
         onBlur={() => setIsHovered(false)}
         //
         // animation
-        initial={animBtnSecondary.initial}
+        initial={ANIM_BTN_SECONDARY.initial}
         animate={{ width: isHovered ? "95%" : "100%" }}
         transition={
           isHovered
-            ? animBtnSecondary.transition_start
-            : animBtnSecondary.transition_end
+            ? ANIM_BTN_SECONDARY.transition_start
+            : ANIM_BTN_SECONDARY.transition_end
         }
       >
         <span className={css.element}>{children}</span>
         <motion.span
           className={css.element}
-          animate={{ transform: `rotate(${isHovered ? "-45deg" : "0deg"})` }}
+          initial={{ rotate: 0 }}
+          animate={{ rotate: isHovered ? -45 : 0 }}
           transition={
             isHovered
-              ? animBtnSecondary.transition_start
-              : animBtnSecondary.transition_end
+              ? ANIM_BTN_SECONDARY.transition_start
+              : ANIM_BTN_SECONDARY.transition_end
           }
         >
           {icon}
@@ -133,36 +135,3 @@ export default function Button({
     );
   }
 }
-
-const animBtnPrimary = {
-  text: {
-    transition: {
-      duration: 0.5,
-      type: "spring",
-      bounce: 0.2,
-    },
-  },
-
-  img: {
-    transition: {
-      duration: 1,
-      type: "spring",
-      bounce: 0.5,
-    },
-  },
-};
-
-const animBtnSecondary = {
-  initial: {
-    width: "100%",
-  },
-  transition_start: {
-    duration: 0.75,
-    type: "spring",
-    bounce: 0.5,
-  },
-  transition_end: {
-    duration: 0.3,
-    ease: cubicBezier(0.5, 0, 0.3, 1),
-  },
-};
