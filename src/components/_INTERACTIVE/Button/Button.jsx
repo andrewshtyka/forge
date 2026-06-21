@@ -97,9 +97,6 @@ export default function Button({
   }
 
   if (type === "secondary") {
-    const text = children.split(" ");
-    console.log(text);
-
     return (
       <motion.button
         type="button"

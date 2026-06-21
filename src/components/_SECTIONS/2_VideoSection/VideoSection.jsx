@@ -3,6 +3,7 @@
 // #region ============================== Imports
 
 // animation
+import { motion } from "motion/react";
 
 // assets
 import poster from "@/assets/images/video_poster.webp";
@@ -11,10 +12,12 @@ import poster from "@/assets/images/video_poster.webp";
 import Image from "next/image";
 import IconPlay from "@/components/_NOT_INTERACTIVE/Icons/IconPlay/IconPlay";
 import IconLogo from "@/components/_NOT_INTERACTIVE/Icons/IconLogo/IconLogo";
+import Dot from "@/components/_NOT_INTERACTIVE/Dot/Dot";
 
 // constants
 
 // hooks
+import useFollowPointer from "@/hooks/useFollowPointer";
 
 // providers / context
 
@@ -23,16 +26,21 @@ import css from "./VideoSection.module.css";
 
 // utility
 import React from "react";
-import { div } from "motion/react-client";
-import Dot from "@/components/_NOT_INTERACTIVE/Dot/Dot";
 
 // #endregion ===========================
 
 export default function VideoSection() {
+  // video
   const [isVisible, setIsVisible] = React.useState(true);
   const sectionRef = React.useRef(null);
   const iframeRef = React.useRef(null);
   const hasStartedRef = React.useRef(false);
+
+  // button
+  const [isHovered, setIsHovered] = React.useState(false);
+  const containerRef = React.useRef(null);
+  const btnRef = React.useRef(null);
+  const { x, y } = useFollowPointer(btnRef, containerRef, isHovered);
 
   // hide poster and play youtube video
   function playVideo() {
@@ -95,12 +103,31 @@ export default function VideoSection() {
 
       {/* button wrapper - fullscreen */}
       {isVisible && (
-        <button type="button" className={css.button} onClick={playVideo}>
+        <motion.button
+          ref={containerRef}
+          type="button"
+          className={css.button}
+          onClick={playVideo}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onFocus={() => setIsHovered(true)}
+          onBlur={() => setIsHovered(false)}
+        >
           {/* button */}
-          <span className={css.content_button}>
+          <motion.span
+            ref={btnRef}
+            className={css.content_button}
+            style={{ x, y }}
+            initial={{ opacity: 0 }}
+            whileInView={{
+              opacity: 1,
+              transition: { duration: 0.1, delay: 0.5 },
+            }}
+            viewport={{ once: true }}
+          >
             <IconPlay />
-          </span>
-        </button>
+          </motion.span>
+        </motion.button>
       )}
 
       {/* info */}
