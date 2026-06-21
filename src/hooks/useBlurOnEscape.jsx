@@ -1,6 +1,6 @@
 import React from "react";
 
-export function useBlurOnEscape() {
+export default function useBlurOnEscape() {
   React.useEffect(() => {
     function handleEscape(e) {
       if (e.code === "Escape") {

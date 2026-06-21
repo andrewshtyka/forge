@@ -1,0 +1,34 @@
+.button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  display: grid;
+  place-content: center;
+}
+
+.content_button {
+  position: absolute;
+  z-index: 1;
+  /* top: 0; */
+  /* left: 0; */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+
+  /* Viewport: 320 - 1920 */
+  aspect-ratio: 1;
+  width: clamp(6rem, 5.2rem + 4vw, 10rem); /* 96 - 160 */
+
+  border-radius: 50%;
+  background-color: var(--color-light);
+  display: grid;
+  place-content: center;
+
+  /* Viewport: 320 - 1920 */
+  padding: clamp(2.25rem, 2rem + 1.25vw, 3.5rem); /* 36 - 56 */
+  padding-inline-start: clamp(2.5rem, 2.2rem + 1.5vw, 4rem); /* 40 - 64 */
+}

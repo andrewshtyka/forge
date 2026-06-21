@@ -3,14 +3,13 @@
 // #region ============================== Imports
 
 // animation
+import Lenis from "lenis";
 
 // components
 
 // constants
 
 // hooks
-import useBlurOnEscape from "@/hooks/useBlurOnEscape";
-import useLenis from "@/hooks/useLenis";
 
 // providers / context
 
@@ -22,9 +21,15 @@ import React from "react";
 
 // #endregion ===========================
 
-export default function HomePageWrapper({ children }) {
-  useBlurOnEscape();
-  useLenis();
+export default function useLenis() {
+  React.useEffect(() => {
+    const lenis = new Lenis();
 
-  return <>{children}</>;
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
 }

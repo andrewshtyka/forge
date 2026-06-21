@@ -36,6 +36,7 @@ const menuItems = [
 
 export default function MenuMobile() {
   const { isMenuOpened, setIsMenuOpened } = React.useContext(MenuStateContext);
+  const [isMobile, setIsMobile] = React.useState(true);
 
   // close menu on resize to desktop
   React.useEffect(() => {
@@ -47,13 +48,29 @@ export default function MenuMobile() {
       }
     }
 
+    function getDeviceWidth() {
+      if (window.innerWidth >= 1200) {
+        setIsMobile(false);
+        console.log(window.innerWidth);
+      } else {
+        setIsMobile(true);
+      }
+    }
+
+    getDeviceWidth();
     window.addEventListener("resize", closeMenu);
-    return () => window.removeEventListener("resize", closeMenu);
+    window.addEventListener("resize", getDeviceWidth);
+    return () => {
+      window.removeEventListener("resize", closeMenu);
+      window.removeEventListener("resize", getDeviceWidth);
+    };
   }, [setIsMenuOpened]);
 
   const clipPathValue = isMenuOpened
     ? "inset(0% 0% 0% 0%)"
     : "inset(0% 0% 100% 0%)";
+
+  const attributes = isMobile ? {} : { tabIndex: "-1" };
 
   return (
     <RemoveScroll enabled={isMenuOpened}>
@@ -82,7 +99,9 @@ export default function MenuMobile() {
             <ul className={css.container_links}>
               {menuItems.map((item, i) => (
                 <li key={i}>
-                  <LinkText type="mobile">{item}</LinkText>
+                  <LinkText type="mobile" {...attributes}>
+                    {item}
+                  </LinkText>
                 </li>
               ))}
             </ul>
@@ -93,7 +112,7 @@ export default function MenuMobile() {
         <div>
           <LinkText hasUnderline={false}>Eng</LinkText>
           <span className={css.divider}>/</span>
-          <LinkText>Fra</LinkText>
+          <LinkText {...attributes}>Fra</LinkText>
         </div>
       </motion.article>
     </RemoveScroll>

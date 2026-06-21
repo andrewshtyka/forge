@@ -29,6 +29,7 @@ export default function LinkText({
   type = "desktop",
   el: Wrapper = Link,
   href = "#",
+  ...rest
 }) {
   const [isHovered, setIsHovered] = React.useState(false);
 
@@ -75,6 +76,7 @@ export default function LinkText({
       onMouseLeave={() => setIsHovered(false)}
       onFocus={() => setIsHovered(true)}
       onBlur={() => setIsHovered(false)}
+      {...rest}
     >
       <span className={`${css.text} ${textSizeClass}`}>
         {children}

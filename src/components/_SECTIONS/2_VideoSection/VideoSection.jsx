@@ -3,21 +3,20 @@
 // #region ============================== Imports
 
 // animation
-import { AnimatePresence, motion, cubicBezier } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 
 // assets
 import poster from "@/assets/images/video_poster.webp";
 
 // components
 import Image from "next/image";
-import IconPlay from "@/components/_NOT_INTERACTIVE/Icons/IconPlay/IconPlay";
 import IconLogo from "@/components/_NOT_INTERACTIVE/Icons/IconLogo/IconLogo";
 import Dot from "@/components/_NOT_INTERACTIVE/Dot/Dot";
+import ButtonFullScreen from "./ButtonFullScreen/ButtonFullScreen";
 
 // constants
 
 // hooks
-import useFollowPointer from "@/hooks/useFollowPointer";
 
 // providers / context
 
@@ -37,12 +36,6 @@ export default function VideoSection() {
   const sectionRef = React.useRef(null);
   const iframeRef = React.useRef(null);
   const hasStartedRef = React.useRef(false);
-
-  // button
-  const [isHovered, setIsHovered] = React.useState(false);
-  const containerRef = React.useRef(null);
-  const btnRef = React.useRef(null);
-  const { x, y } = useFollowPointer(btnRef, containerRef, isHovered);
 
   // hide poster and play youtube video
   function playVideo() {
@@ -90,7 +83,7 @@ export default function VideoSection() {
         allowFullScreen
         loading="lazy"
         className={css.video}
-        inert={isVisible}
+        inert={isVisible} // removes focus from youtube iframe if poster is visible
       />
 
       {/* poster */}
@@ -123,34 +116,7 @@ export default function VideoSection() {
 
       {/* button wrapper - fullscreen */}
       <AnimatePresence mode="wait">
-        {isVisible && (
-          <motion.button
-            ref={containerRef}
-            type="button"
-            className={css.button}
-            onClick={playVideo}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            onFocus={() => setIsHovered(true)}
-            onBlur={() => setIsHovered(false)}
-          >
-            {/* button */}
-            <motion.span
-              ref={btnRef}
-              className={css.content_button}
-              style={{ x, y }}
-              initial={{ opacity: 0, scale: 1 }}
-              whileInView={{
-                opacity: 1,
-                transition: { duration: 0.1, delay: 0.5 },
-              }}
-              viewport={{ once: true }}
-              exit={{ scale: 0 }}
-            >
-              <IconPlay />
-            </motion.span>
-          </motion.button>
-        )}
+        {isVisible && <ButtonFullScreen onClick={playVideo} />}
       </AnimatePresence>
 
       {/* info */}
@@ -161,12 +127,24 @@ export default function VideoSection() {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <span className={`f_body ${css.time}`}>00:00</span>
-            <span className={css.container_logo}>
-              <IconLogo size="100%" />
-              <IconLogo size="100%" />
+            <span className={`f_body ${css.time}`}>
+              00
+              <span className={css.time_divider}>:</span>
+              00
             </span>
-            <span className={`f_body ${css.time}`}>04:15</span>
+            <span className={css.container_logo}>
+              <span className={css.icon_left}>
+                <IconLogo size="100%" />
+              </span>
+              <span className={css.icon_right}>
+                <IconLogo size="100%" />
+              </span>
+            </span>
+            <span className={`f_body ${css.time}`}>
+              04
+              <span className={css.time_divider}>:</span>
+              15
+            </span>
           </motion.div>
         )}
       </AnimatePresence>
