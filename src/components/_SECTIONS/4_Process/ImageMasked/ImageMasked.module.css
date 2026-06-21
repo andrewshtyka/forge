@@ -29,6 +29,7 @@
   height: 140%;
   width: 100%;
   object-fit: cover;
+  pointer-events: none;
 }
 
 .container_dots_top,

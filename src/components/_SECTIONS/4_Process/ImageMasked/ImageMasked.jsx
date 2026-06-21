@@ -29,7 +29,7 @@ const MotionImage = motion.create(Image);
 
 export default function ImageMasked({ src, alt = "" }) {
   const sectionRef = React.useRef(null);
-  const parallaxY = useParallax(sectionRef);
+  const parallaxY = useParallax(sectionRef, 0.15);
 
   return (
     <div className={css.container}>

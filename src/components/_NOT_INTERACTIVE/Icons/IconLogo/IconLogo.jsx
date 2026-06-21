@@ -20,14 +20,25 @@ import React from "react";
 
 // #endregion ===========================
 
-export default function IconLogo({ color = "white", size = 18 }) {
+export default function IconLogo({
+  color = "white",
+  size = 18,
+  isRotatingRight = false,
+  isRotatingLeft = false,
+}) {
   let appliedColor;
-
   if (color === "white") {
     appliedColor = "var(--color-bg-primary)";
   } else if (color === "black") {
     appliedColor = "var(--color-bg-secondary)";
   } else return null;
+
+  let appliedClass;
+  if (isRotatingRight) {
+    appliedClass = `${css.icon_left}`;
+  } else if (isRotatingLeft) {
+    appliedClass = `${css.icon_right}`;
+  } else appliedClass = " ";
 
   return (
     <svg
@@ -36,6 +47,7 @@ export default function IconLogo({ color = "white", size = 18 }) {
       viewBox="0 0 18 18"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={appliedClass}
     >
       <path
         stroke={appliedColor}

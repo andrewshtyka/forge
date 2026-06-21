@@ -30,7 +30,7 @@ import useParallax from "@/hooks/useParallax";
 
 // #endregion ===========================
 
-export const MotionImage = motion.create(Image);
+const MotionImage = motion.create(Image);
 
 export default function VideoSection() {
   const [isVisible, setIsVisible] = React.useState(true);
@@ -132,19 +132,24 @@ export default function VideoSection() {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
+            {/* time - left */}
             <span className={`f_body ${css.time}`}>
               00
               <span className={css.time_divider}>:</span>
               00
             </span>
+
+            {/* dots */}
             <span className={css.container_logo}>
               <span className={css.icon_left}>
-                <IconLogo size="100%" />
+                <IconLogo size="100%" isRotatingRight={true} />
               </span>
               <span className={css.icon_right}>
-                <IconLogo size="100%" />
+                <IconLogo size="100%" isRotatingLeft={true} />
               </span>
             </span>
+
+            {/* time - right */}
             <span className={`f_body ${css.time}`}>
               04
               <span className={css.time_divider}>:</span>

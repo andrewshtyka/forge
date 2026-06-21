@@ -1,0 +1,25 @@
+.icon_left {
+  animation: rotateRight 2s linear infinite;
+}
+
+.icon_right {
+  animation: rotateleft 2s linear infinite;
+}
+
+@keyframes rotateRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateleft {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
