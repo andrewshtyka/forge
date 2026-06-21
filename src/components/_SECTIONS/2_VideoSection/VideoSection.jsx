@@ -90,6 +90,7 @@ export default function VideoSection() {
         allowFullScreen
         loading="lazy"
         className={css.video}
+        inert={isVisible}
       />
 
       {/* poster */}
