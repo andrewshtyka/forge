@@ -11,12 +11,13 @@ import Portfolio from "@/components/_SECTIONS/5_Portfolio/Portfolio";
 import Banner from "@/components/_SECTIONS/6_Banner/Banner";
 import Manufacture from "@/components/_SECTIONS/7_Manufacture/Manufacture";
 import Footer from "@/components/_SECTIONS/8_Footer/Footer";
+import HomePageWrapper from "@/components/_WRAPPERS/HomePageWrapper/HomePageWrapper";
 
 // #endregion ===========================
 
 export default function Home() {
   return (
-    <>
+    <HomePageWrapper>
       <Header />
       <MenuMobile />
       <Hero />
@@ -27,6 +28,6 @@ export default function Home() {
       <Banner />
       <Manufacture />
       <Footer />
-    </>
+    </HomePageWrapper>
   );
 }

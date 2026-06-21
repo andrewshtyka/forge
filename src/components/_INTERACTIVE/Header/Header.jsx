@@ -7,7 +7,6 @@
 // components
 import IconLogo from "@/components/_NOT_INTERACTIVE/Icons/IconLogo/IconLogo";
 import MenuButton from "@/components/_INTERACTIVE/MenuButton/MenuButton";
-import Link from "next/link";
 import IconLocation from "@/components/_NOT_INTERACTIVE/Icons/IconLocation/IconLocation";
 import LinkText from "@/components/_INTERACTIVE/LinkText/LinkText";
 

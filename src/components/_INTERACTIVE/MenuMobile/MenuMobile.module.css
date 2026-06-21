@@ -19,6 +19,12 @@
   --offset-links: clamp(0.625rem, 0.4175rem + 1.4433vw, 1.5rem); /* 10 - 24 */
 }
 
+@media (width >= 1200px) {
+  .article {
+    display: none;
+  }
+}
+
 .container_top {
   margin-block-start: var(--space-16);
 }

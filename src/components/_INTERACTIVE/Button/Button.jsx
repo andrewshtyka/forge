@@ -63,6 +63,8 @@ export default function Button({
         onClick={onClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onFocus={() => setIsHovered(true)}
+        onBlur={() => setIsHovered(false)}
       >
         <span className={css.container}>
           <motion.span
@@ -106,6 +108,8 @@ export default function Button({
         onClick={onClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onFocus={() => setIsHovered(true)}
+        onBlur={() => setIsHovered(false)}
         //
         // animation
         initial={animBtnSecondary.initial}

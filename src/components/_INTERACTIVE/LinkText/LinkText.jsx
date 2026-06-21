@@ -47,8 +47,11 @@ export default function LinkText({
   } else return null;
 
   // attributes for link: if <a> make external, if Link - add nothing
-  const attributes =
+  const attributesExternal =
     Wrapper === "a" ? { target: "_blank", rel: "noopener noreferrer" } : {};
+
+  // element focusable (no underline = focusable)
+  const attributesFocusable = hasUnderline ? {} : { tabIndex: "-1" };
 
   // class for Text: size of text
   let textSizeClass;
@@ -66,14 +69,17 @@ export default function LinkText({
         pointerEvents: hasUnderline ? "initial" : "none",
       }}
       className={css.link}
-      {...attributes}
+      {...attributesExternal}
+      {...attributesFocusable}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onFocus={() => setIsHovered(true)}
+      onBlur={() => setIsHovered(false)}
     >
       <span className={`${css.text} ${textSizeClass}`}>
         {children}
 
-        {/* desktop line - animates */}
+        {/* desktop underline - DOES animate  on hover */}
         {hasUnderline && (
           <motion.span
             className={css.underline}
@@ -90,7 +96,7 @@ export default function LinkText({
           ></motion.span>
         )}
 
-        {/* mobile line - DOESN'T animates */}
+        {/* mobile underline - DOESN'T animate on hover */}
         {hasUnderline && (
           <motion.span
             className={css.underline_mob}
