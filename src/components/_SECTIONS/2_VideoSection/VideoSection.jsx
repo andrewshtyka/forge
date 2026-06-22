@@ -104,7 +104,7 @@ export default function VideoSection({ scrollYProgress }) {
           <MotionImage
             src={poster}
             alt="Details"
-            loading="lazy"
+            loading="eager"
             className={css.img}
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}

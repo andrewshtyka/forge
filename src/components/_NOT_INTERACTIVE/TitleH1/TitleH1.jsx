@@ -130,7 +130,7 @@ export default function TitleH1({
         requestAnimationFrame(() => ScrollTrigger.refresh());
       });
     },
-    { scope: titleRef },
+    // { scope: titleRef },
   );
 
   const appliedClass = hasDescender ? css.has_descender : css.no_descender;
