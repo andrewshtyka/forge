@@ -63,26 +63,67 @@ export default function TitleH1({
           linesClass: "line_split",
           autoSplit: true,
           onSplit: (instance) => {
-            gsap.set(instance.lines, { opacity: 0, y: 20 });
+            instance.lines.forEach((line) => {
+              const newDiv = document.createElement("div");
+              newDiv.classList.add("bar");
+              line.append(newDiv);
+            });
 
-            el.style.visibility = "visible";
+            const barsArr = instance.lines.map((line) => {
+              return line.querySelector(".bar");
+            });
 
-            return gsap.to(instance.lines, {
-              opacity: 1,
-              y: 0,
-              duration: 0.6,
-              stagger: 0.15,
-              ease: "power2.out",
+            const textsArr = instance.lines.map((line) => {
+              return line.querySelectorAll("span");
+            });
+
+            gsap.set(instance.lines, { visibility: "hidden" });
+            gsap.set(textsArr, { visibility: "hidden" });
+
+            // instance.lines
+            const tl = gsap.timeline({
               scrollTrigger: {
                 trigger: el,
-                start: "top 80%",
+                start: "top bottom",
                 toggleActions: "play none none none",
+                invalidateOnRefresh: true,
               },
             });
+
+            tl.to(instance.lines, {
+              visibility: "visible",
+              duration: 0,
+            })
+              .to(barsArr, {
+                x: "100%",
+                duration: 0.75,
+                stagger: 0.15,
+                ease: "power2.inOut",
+              })
+              .to(
+                textsArr,
+                {
+                  visibility: "visible",
+                  duration: 0,
+                },
+                ">-0.15",
+              )
+              .to(
+                barsArr,
+                {
+                  x: "210%",
+                  duration: 0.75,
+                  stagger: 0.15,
+                  ease: "power2.out",
+                },
+                ">-0.05",
+              );
+
+            return tl;
           },
         });
 
-        ScrollTrigger.refresh();
+        requestAnimationFrame(() => ScrollTrigger.refresh());
       });
     },
     { scope: titleRef },
