@@ -143,3 +143,33 @@ export const ANIM_ABOUT_LIST_ITEM = {
     },
   },
 };
+
+export const ANIM_PORTFOLIO_LIST_ITEM = {
+  initial: {
+    x: 0,
+    color: "var(--color-text-gray)",
+  },
+
+  animate: {
+    position: {
+      start: 0,
+      end: "calc(var(--offset-primary) * 2)",
+    },
+    color: {
+      start: "var(--color-text-gray)",
+      end: "var(--color-text-light)",
+    },
+  },
+
+  transition: {
+    start: {
+      duration: 0.3,
+      ease: cubicBezier(0.3, 0, 0.3, 1),
+    },
+    end: {
+      duration: 0.5,
+      type: "spring",
+      bounce: 0.3,
+    },
+  },
+};

@@ -3,6 +3,7 @@
 // #region ============================== Imports
 
 // animation
+import { motion } from "motion/react";
 
 // assets
 import img_ceo from "@/assets/images/ceo.webp";
@@ -14,6 +15,7 @@ import Divider from "@/components/_NOT_INTERACTIVE/Divider/Divider";
 // constants
 
 // hooks
+import useParallax from "@/hooks/useParallax";
 
 // providers / context
 
@@ -23,14 +25,26 @@ import css from "./Quote.module.css";
 // utility
 import React from "react";
 
+const MotionImage = motion.create(Image);
+
 // #endregion ===========================
 
 export default function Quote() {
+  const containerRef = React.useRef(null);
+  const parallaxY = useParallax(containerRef, 0.015);
+
   return (
     <article className={css.article}>
       {/* top */}
       <div className={css.top}>
-        <Image src={img_ceo} alt="Ayrton Senna" className={css.img} />
+        <div ref={containerRef} className={css.container_img}>
+          <MotionImage
+            src={img_ceo}
+            alt="Ayrton Senna"
+            className={css.img}
+            style={{ y: parallaxY }}
+          />
+        </div>
 
         <div>
           <h3 className={`f_h3 ${css.title}`}>Ayrton Senna</h3>

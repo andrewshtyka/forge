@@ -3,6 +3,7 @@
 // #region ============================== Imports
 
 // animation
+import { motion } from "motion/react";
 
 // assets
 import img_title from "@/assets/images/title_works.webp";
@@ -19,6 +20,7 @@ import IconArrow from "@/components/_NOT_INTERACTIVE/Icons/IconArrow/IconArrow";
 import Images from "./Images/Images";
 
 // constants
+import { portfolioListItems } from "@/data/portfolioListItems";
 
 // hooks
 
@@ -31,77 +33,6 @@ import css from "./Portfolio.module.css";
 import React from "react";
 
 // #endregion ===========================
-
-const listItems = [
-  {
-    title: "Electric Bicycle",
-    text: "Motor mounts",
-  },
-  {
-    title: "Prefab Home",
-    text: "Metal components",
-  },
-  {
-    title: "Mechanical Watch",
-    text: "Spacer rings",
-  },
-  {
-    title: "3D Printer",
-    text: "Threaded adapters",
-  },
-  {
-    title: "Drone",
-    text: "Custom brackets",
-  },
-  {
-    title: "Motorcycle",
-    text: "Gear components",
-  },
-  {
-    title: "Robotic Arm",
-    text: "Shafts",
-  },
-  {
-    title: "Electric Skateboard",
-    text: "Bushings",
-  },
-  {
-    title: "CNC Router",
-    text: "Couplings",
-  },
-  {
-    title: "Camera Gimbal",
-    text: "Heat sinks",
-  },
-  {
-    title: "Hydraulic Press",
-    text: "Valve bodies",
-  },
-  {
-    title: "Race Car",
-    text: "Mounting plates",
-  },
-  {
-    title: "Medical Imaging Device",
-    text: "Pulleys",
-  },
-  {
-    title: "Industrial Conveyor System",
-    text: "Tool holders",
-  },
-  {
-    title: "Smart Coffee Machine",
-    text: "Flanges",
-  },
-  {
-    title: "Satellite System",
-    text: "Manifolds",
-  },
-  {
-    title: "RC Airplane",
-    text: "Rotor hubs",
-  },
-];
 
 export default function Portfolio() {
   return (
@@ -119,15 +50,17 @@ export default function Portfolio() {
 
       {/* mobile */}
       <ul className={css.list_mob}>
-        {listItems.map(({ title, text }, i) => {
+        {portfolioListItems.map(({ id, title, text }) => {
           const maxAmount = 7;
-          if (i > maxAmount - 1) return;
-
-          let isLast = false;
-          if (i === maxAmount - 1) isLast = true;
+          if (id > maxAmount) return;
 
           return (
-            <ListItemMob key={i} title={title} text={text} isLast={isLast} />
+            <ListItemMob
+              key={id}
+              title={title}
+              text={text}
+              isLast={id === maxAmount}
+            />
           );
         })}
       </ul>
@@ -141,22 +74,15 @@ export default function Portfolio() {
 
         {/* list */}
         <ul className={css.list_desktop}>
-          {listItems.map(({ title, text }, i) => {
-            let isFirst = false;
-            if (i === 0) isFirst = true;
-            let isLast = false;
-            if (i === listItems.length - 1) isLast = true;
-
-            return (
-              <ListItemDesktop
-                key={i}
-                title={title}
-                text={text}
-                isFirst={isFirst}
-                isLast={isLast}
-              />
-            );
-          })}
+          {portfolioListItems.map(({ id, title, text }) => (
+            <ListItemDesktop
+              key={id}
+              title={title}
+              text={text}
+              isLast={id === portfolioListItems.length}
+              id={id}
+            />
+          ))}
         </ul>
 
         {/* text */}

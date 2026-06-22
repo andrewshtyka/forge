@@ -3,31 +3,49 @@
 // #region ============================== Imports
 
 // animation
+import { motion } from "motion/react";
 
 // assets
-import img_1 from "@/assets/images/portfolio/img_portfolio_1.webp";
 
 // components
 import Image from "next/image";
 
 // constants
+import { portfolioListItems } from "@/data/portfolioListItems";
 
 // hooks
 
 // providers / context
+import { PortfolioActiveItemContext } from "@/providers/ActiveItemProvider/ActiveItemProvider";
 
 // styles
 import css from "./Images.module.css";
 
 // utility
 import React from "react";
+import { li } from "motion/react-client";
 
 // #endregion ===========================
 
+const MotionImage = motion.create(Image);
+
 export default function Images() {
+  const { activeId } = React.useContext(PortfolioActiveItemContext);
+
   return (
-    <div className={css.container}>
-      <Image src={img_1} alt="" className={css.img} />
-    </div>
+    <ul className={css.container}>
+      {portfolioListItems.map(({ id, img, title }) => (
+        <li key={id} style={{ display: "inline" }}>
+          <MotionImage
+            src={img}
+            alt={title}
+            loading="lazy"
+            className={css.img}
+            initial={{ opacity: 1 }}
+            animate={{ opacity: id === activeId ? 1 : 0 }}
+          />
+        </li>
+      ))}
+    </ul>
   );
 }

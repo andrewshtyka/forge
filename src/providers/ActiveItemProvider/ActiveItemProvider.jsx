@@ -9,14 +9,15 @@ import { aboutListItems } from "@/data/aboutListItems";
 // utility
 import React from "react";
 
+const INTERVAL = 1500;
+
+// ABOUT
 export const AboutActiveItemContext = React.createContext({
   activeId: 1,
   setActiveId: () => {},
   isTimerRunning: true,
   setIsTimerRunning: () => {},
 });
-
-const INTERVAL = 1500;
 
 export function AboutActiveItemProvider({ children }) {
   const [activeId, setActiveId] = React.useState(1);
@@ -50,5 +51,26 @@ export function AboutActiveItemProvider({ children }) {
     >
       {children}
     </AboutActiveItemContext.Provider>
+  );
+}
+
+// PORTFOLIO
+export const PortfolioActiveItemContext = React.createContext({
+  activeId: 1,
+  setActiveId: () => {},
+});
+
+export function PortfolioActiveItemProvider({ children }) {
+  const [activeId, setActiveId] = React.useState(1);
+
+  return (
+    <PortfolioActiveItemContext.Provider
+      value={{
+        activeId,
+        setActiveId,
+      }}
+    >
+      {children}
+    </PortfolioActiveItemContext.Provider>
   );
 }
