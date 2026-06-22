@@ -96,6 +96,7 @@ export default function VideoSection() {
           <MotionImage
             src={poster}
             alt="Details"
+            loading="lazy"
             className={css.img}
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}

@@ -9,7 +9,7 @@ import { aboutListItems } from "@/data/aboutListItems";
 // utility
 import React from "react";
 
-const INTERVAL = 1500;
+const INTERVAL = 1000;
 
 // ABOUT
 export const AboutActiveItemContext = React.createContext({
@@ -37,6 +37,8 @@ export function AboutActiveItemProvider({ children }) {
           setActiveId((v) => v + 1);
         }
       }
+    } else {
+      elapsed.current = 0;
     }
   });
 

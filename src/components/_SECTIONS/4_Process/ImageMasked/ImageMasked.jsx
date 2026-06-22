@@ -41,6 +41,7 @@ export default function ImageMasked({ src, alt = "" }) {
         <MotionImage
           src={src}
           alt={alt}
+          loading="lazy"
           className={css.img}
           style={{ y: parallaxY }}
         />

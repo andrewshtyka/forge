@@ -41,6 +41,7 @@ export default function Quote() {
           <MotionImage
             src={img_ceo}
             alt="Ayrton Senna"
+            loading="lazy"
             className={css.img}
             style={{ y: parallaxY }}
           />

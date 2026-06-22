@@ -57,6 +57,7 @@ export default function ListAnimated() {
             key={id}
             src={img}
             alt={text}
+            loading="lazy"
             className={css.img}
             style={{ y: parallaxY }}
             initial={ANIM_ABOUT_LIST_ITEM.image.initial}

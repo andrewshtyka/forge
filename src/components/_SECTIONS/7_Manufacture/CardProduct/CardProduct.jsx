@@ -173,6 +173,7 @@ export default function CardProduct({ data }) {
           <MotionImage
             src={data.img.src}
             alt={data.img.alt}
+            loading="lazy"
             className={css.img}
             initial={ANIM_PRODUCT_CARD.initial}
             animate={{

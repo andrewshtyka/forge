@@ -30,6 +30,7 @@
   width: 100%;
   object-fit: cover;
   pointer-events: none;
+  background-color: var(--color-bg-tetriary);
 }
 
 .container_dots_top,

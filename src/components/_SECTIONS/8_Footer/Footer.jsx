@@ -42,49 +42,53 @@ const links = {
 export default function Footer() {
   return (
     <footer className={css.footer}>
-      {/* dots */}
-      <div className={css.container_dots}>
-        <Dot />
-        <Dot />
-      </div>
-
-      {/* info */}
-      <div className={css.info}>
-        {/* top */}
-        <div className={css.top}>
-          <div>
-            <h3 className={`f_description f_uppercase ${css.title}`}>Design</h3>
-            <LinkText el="a" color="white" href={links.lazarev.website}>
-              {links.lazarev.title}
-            </LinkText>
-          </div>
-          <div className={css.container_development}>
-            <h3 className={`f_description f_uppercase ${css.title}`}>
-              Development
-            </h3>
-            <LinkText el="a" color="white" href={links.shtyka.website}>
-              {links.shtyka.title}
-            </LinkText>
-          </div>
+      <div className={css.content}>
+        {/* dots */}
+        <div className={css.container_dots}>
+          <Dot />
+          <Dot />
         </div>
 
-        {/* text */}
-        <p className={`f_body ${css.text}`}>
-          Current design is a concept, made by me –{" "}
-          <LinkText el="a" color="white" href={links.shtyka.linkedin}>
-            {links.shtyka.title}
-          </LinkText>
-          , and{" "}
-          <LinkText el="a" color="white" href={links.danylo.linkedin}>
-            {links.danylo.title}
-          </LinkText>{" "}
-          for{" "}
-          <LinkText el="a" color="white" href={links.lazarev.linkedin}>
-            {links.lazarev.title}
-          </LinkText>{" "}
-          in Apr 2025. A year later I decided to transform a static design into
-          an interactive webpage with React, Next.js and Motion.
-        </p>
+        {/* info */}
+        <div className={css.info}>
+          {/* top */}
+          <div className={css.top}>
+            <div>
+              <h3 className={`f_description f_uppercase ${css.title}`}>
+                Design
+              </h3>
+              <LinkText el="a" color="white" href={links.lazarev.website}>
+                {links.lazarev.title}
+              </LinkText>
+            </div>
+            <div className={css.container_development}>
+              <h3 className={`f_description f_uppercase ${css.title}`}>
+                Development
+              </h3>
+              <LinkText el="a" color="white" href={links.shtyka.website}>
+                {links.shtyka.title}
+              </LinkText>
+            </div>
+          </div>
+          
+          {/* text */}
+          <p className={`f_body ${css.text}`}>
+            Current design is a concept, made by me –{" "}
+            <LinkText el="a" color="white" href={links.shtyka.linkedin}>
+              {links.shtyka.title}
+            </LinkText>
+            , and{" "}
+            <LinkText el="a" color="white" href={links.danylo.linkedin}>
+              {links.danylo.title}
+            </LinkText>{" "}
+            for{" "}
+            <LinkText el="a" color="white" href={links.lazarev.linkedin}>
+              {links.lazarev.title}
+            </LinkText>{" "}
+            in Apr 2025. A year later I decided to transform a static design
+            into an interactive webpage with React, Next.js and Motion.
+          </p>
+        </div>
       </div>
     </footer>
   );
