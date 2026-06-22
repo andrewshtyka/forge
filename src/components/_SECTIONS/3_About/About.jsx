@@ -6,21 +6,12 @@
 
 // assets
 import img_title from "@/assets/images/title_precision.webp";
-import list_img_1 from "@/assets/images/list_img_1.webp";
-import list_img_2 from "@/assets/images/list_img_2.webp";
-import list_img_3 from "@/assets/images/list_img_3.webp";
-import list_img_4 from "@/assets/images/list_img_4.webp";
 
 // components
 import Tag from "@/components/_NOT_INTERACTIVE/Tag/Tag";
 import Image from "next/image";
-import ListItem from "./ListItem/ListItem";
-import IconPlate from "@/components/_NOT_INTERACTIVE/Icons/IconPlate/IconPlate";
-import IconConnector from "@/components/_NOT_INTERACTIVE/Icons/IconConnector/IconConnector";
-import IconJoint from "@/components/_NOT_INTERACTIVE/Icons/IconJoint/IconJoint";
-import IconShaft from "@/components/_NOT_INTERACTIVE/Icons/IconShaft/IconShaft";
-import Dot from "@/components/_NOT_INTERACTIVE/Dot/Dot";
 import Quote from "./Quote/Quote";
+import ListAnimated from "./ListAnimated/ListAnimated";
 
 // constants
 
@@ -35,29 +26,6 @@ import css from "./About.module.css";
 import React from "react";
 
 // #endregion ===========================
-
-const listItems = [
-  {
-    text: "Mounting Plates",
-    key: 1,
-    icon: <IconPlate size="100%" />,
-  },
-  {
-    text: "Multi-Pin Connectors",
-    key: 2,
-    icon: <IconConnector size="100%" />,
-  },
-  {
-    text: "Spherical Joints",
-    key: 3,
-    icon: <IconJoint size="100%" />,
-  },
-  {
-    text: "Motor Shafts",
-    key: 4,
-    icon: <IconShaft size="100%" />,
-  },
-];
 
 export default function About() {
   return (
@@ -75,27 +43,7 @@ export default function About() {
           <Image src={img_title} alt="Precision" className={css.img_title} />
         </h2>
 
-        {/* text */}
-        <ul className={css.list_text}>
-          {listItems.map(({ text, key, icon }) => (
-            <ListItem key={key} num={key} icon={icon}>
-              {text}
-            </ListItem>
-          ))}
-        </ul>
-
-        {/* images */}
-        <div className={css.container_img}>
-          <div className={css.container_dots_top}>
-            <Dot />
-            <Dot />
-          </div>
-          <Image src={list_img_1} alt="Detail" className={css.img} />
-          <div className={css.container_dots_bottom}>
-            <Dot />
-            <Dot />
-          </div>
-        </div>
+        <ListAnimated />
       </div>
 
       {/* right part */}

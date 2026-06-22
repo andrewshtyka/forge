@@ -3,14 +3,17 @@
 // #region ============================== Imports
 
 // animation
+import { motion } from "motion/react";
 
 // components
 
 // constants
+import { ANIM_ABOUT_LIST_ITEM } from "@/constants/animation";
 
 // hooks
 
 // providers / context
+import { AboutActiveItemContext } from "@/providers/ActiveItemProvider/ActiveItemProvider";
 
 // styles
 // import css from '.'
@@ -20,31 +23,30 @@ import React from "react";
 
 // #endregion ===========================
 
-export default function IconConnector({ color = "black", size = 16 }) {
-  let appliedColor;
-
-  if (color === "white") {
-    appliedColor = "var(--color-bg-primary)";
-  } else if (color === "black") {
-    appliedColor = "var(--color-bg-secondary)";
-  } else if (color === "blue") {
-    appliedColor = "var(--color-bg-accent)";
-  } else return null;
+export default function IconConnector({ size = 16, id }) {
+  const { activeId } = React.useContext(AboutActiveItemContext);
 
   return (
-    <svg
+    <motion.svg
       width={size}
       height={size}
       viewBox="0 0 16 16"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      initial={ANIM_ABOUT_LIST_ITEM.icon.initial}
+      animate={{
+        fill:
+          id === activeId
+            ? ANIM_ABOUT_LIST_ITEM.icon.animate.end
+            : ANIM_ABOUT_LIST_ITEM.icon.animate.start,
+      }}
+      transition={ANIM_ABOUT_LIST_ITEM.icon.transition}
     >
       <path
-        fill={appliedColor}
         fillRule="evenodd"
         clipRule="evenodd"
         d="M16 8C16 9.18962 15.7409 10.3186 15.2747 11.3333L12 12L11.3333 15.2746C10.319 15.7403 9.1901 16 8 16C6.8099 16 5.68099 15.7403 4.66667 15.2746L4 12L0.72526 11.3333C0.259115 10.3186 0 9.18962 0 8C0 3.58171 3.58203 0 8 0C12.418 0 16 3.58171 16 8ZM4 8C4 8.73641 3.40365 9.33333 2.66667 9.33333C1.92969 9.33333 1.33333 8.73641 1.33333 8C1.33333 7.26359 1.92969 6.66667 2.66667 6.66667C3.40365 6.66667 4 7.26359 4 8ZM4 5.33333C4.73698 5.33333 5.33333 4.73641 5.33333 4C5.33333 3.26359 4.73698 2.66667 4 2.66667C3.70052 2.66667 3.42448 2.7653 3.20182 2.9318C2.8763 3.17497 2.66667 3.56291 2.66667 4C2.66667 4.73641 3.26302 5.33333 4 5.33333ZM13.3333 4C13.3333 4.73641 12.737 5.33333 12 5.33333C11.263 5.33333 10.6667 4.73641 10.6667 4C10.6667 3.26359 11.263 2.66667 12 2.66667C12.737 2.66667 13.3333 3.26359 13.3333 4ZM8 4C8.73698 4 9.33333 3.40308 9.33333 2.66667C9.33333 1.93026 8.73698 1.33333 8 1.33333C7.60807 1.33333 7.25651 1.50171 7.01302 1.76994C6.79818 2.00675 6.66667 2.32137 6.66667 2.66667C6.66667 3.40308 7.26302 4 8 4ZM14.6667 8C14.6667 8.73641 14.0703 9.33333 13.3333 9.33333C12.5964 9.33333 12 8.73641 12 8C12 7.26359 12.5964 6.66667 13.3333 6.66667C14.0703 6.66667 14.6667 7.26359 14.6667 8ZM8.66667 13.3333V6.66667H7.33333V13.3333H8.66667Z"
       />
-    </svg>
+    </motion.svg>
   );
 }

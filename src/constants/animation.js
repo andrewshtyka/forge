@@ -84,3 +84,62 @@ export const ANIM_PRODUCT_CARD_BG = {
     ease: cubicBezier(0.3, 0, 0, 1),
   },
 };
+
+export const ANIM_ABOUT_LIST_ITEM = {
+  arrow: {
+    initial: {
+      top: "-50%",
+      left: "calc(-100% + var(--space-2))",
+    },
+    animate: {
+      start: 0,
+      end: "calc(100% - var(--space-2))",
+    },
+    transition: {
+      duration: 0.5,
+      ease: cubicBezier(0.3, 0, 0, 1),
+    },
+  },
+
+  text: {
+    initial: {
+      color: "var(--color-text-dark)",
+    },
+    animate: {
+      start: "var(--color-text-dark)",
+      end: "var(--color-text-accent-primary)",
+    },
+    transition: {
+      duration: 0.5,
+      ease: cubicBezier(0.3, 0, 0, 1),
+    },
+  },
+
+  icon: {
+    initial: {
+      fill: "var(--color-text-dark)",
+    },
+    animate: {
+      start: "var(--color-text-dark)",
+      end: "var(--color-text-accent-primary)",
+    },
+    transition: {
+      duration: 0.5,
+      ease: cubicBezier(0.3, 0, 0, 1),
+    },
+  },
+
+  image: {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      start: 0,
+      end: 1,
+    },
+    transition: {
+      duration: 0.5,
+      ease: cubicBezier(0.3, 0, 0.3, 1),
+    },
+  },
+};

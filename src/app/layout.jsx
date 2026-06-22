@@ -5,6 +5,7 @@ import { font } from "@/lib/helpers/importFonts";
 
 // providers / context
 import { MenuStateProvider } from "@/providers/MenuStateProvider/MenuStateProvider";
+import { AboutActiveItemProvider } from "@/providers/ActiveItemProvider/ActiveItemProvider";
 
 // styles
 import "@/styles/globals.css";
@@ -25,7 +26,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={font.variable}>
       <MenuStateProvider>
-        <body>{children}</body>
+        <AboutActiveItemProvider>
+          <body>{children}</body>
+        </AboutActiveItemProvider>
       </MenuStateProvider>
     </html>
   );

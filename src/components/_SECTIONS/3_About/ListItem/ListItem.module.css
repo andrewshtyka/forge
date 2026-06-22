@@ -15,9 +15,23 @@
 
 .container_num {
   grid-column: 1 / 2;
+  width: 100%;
   position: relative;
-  width: fit-content;
+  text-align: start;
+  overflow: hidden;
 }
+
+.icon_active {
+  display: inline-flex;
+  position: absolute;
+  padding: var(--space-4);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-accent-primary);
+}
+
+/* ================================================== */
+/* */
+/* Right part */
 
 .title {
   grid-column: 2 / -1;

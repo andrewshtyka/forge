@@ -10,12 +10,7 @@ import img_4 from "@/assets/images/container_3_joint.webp";
 import img_5 from "@/assets/images/container_4_shaft.webp";
 
 // animation
-import {
-  motion,
-  LayoutGroup,
-  useAnimationFrame,
-  cubicBezier,
-} from "motion/react";
+import { motion, useAnimationFrame, cubicBezier } from "motion/react";
 
 // components
 import Image from "next/image";
@@ -71,7 +66,7 @@ export default function Sequence() {
   });
 
   return (
-    <LayoutGroup>
+    <>
       {images.map((_, index) => {
         const containerKey = index + 1;
         const imgKey = orderArr[index];
@@ -95,7 +90,7 @@ export default function Sequence() {
           </li>
         );
       })}
-    </LayoutGroup>
+    </>
   );
 }
 
