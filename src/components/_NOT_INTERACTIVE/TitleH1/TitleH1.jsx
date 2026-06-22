@@ -57,7 +57,6 @@ export default function TitleH1({
             }),
       );
 
-      // чекаємо і шрифти, і картинки
       Promise.all([document.fonts.ready, ...imgPromises]).then(() => {
         SplitText.create(el, {
           type: "lines",
