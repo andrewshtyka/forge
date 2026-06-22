@@ -1,0 +1,32 @@
+.no_descender {
+  /* Viewport: 320 - 1920 */
+  height: clamp(1.625rem, 6.5vmin, 4.5rem);
+  width: auto;
+  position: relative;
+  bottom: 0.13em;
+}
+
+@media (width >= 1200px) {
+  .no_descender {
+    height: clamp(2.8rem, 6.5vmin, 4.5rem);
+  }
+}
+
+.has_descender {
+  /* Viewport: 320 - 1920 */
+  height: clamp(2rem, 8vmin, 5.5rem);
+  width: auto;
+  position: relative;
+}
+
+@media (width >= 1200px) {
+  .has_descender {
+    height: clamp(3.5rem, 8vmin, 4.5rem);
+  }
+}
+
+/* :global(.line_split) {
+  position: relative;
+  width: fit-content;
+  opacity: 0;
+} */

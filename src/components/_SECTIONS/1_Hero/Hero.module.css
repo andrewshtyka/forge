@@ -21,6 +21,7 @@
 .container_title {
   padding-block-start: var(--offset-primary);
   padding-inline: var(--offset-primary);
+  margin-inline: auto;
 }
 
 .title {

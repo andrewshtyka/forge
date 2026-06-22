@@ -24,7 +24,7 @@ import React from "react";
 // #endregion ===========================
 
 export default function HomePageWrapper({ children }) {
-  // useScrollToTop();
+  useScrollToTop();
   useBlurOnEscape();
   useLenis();
 

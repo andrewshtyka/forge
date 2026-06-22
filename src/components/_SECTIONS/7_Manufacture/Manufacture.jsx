@@ -20,6 +20,7 @@ import Image from "next/image";
 import CardProduct from "./CardProduct/CardProduct";
 import DotsBG from "@/components/_NOT_INTERACTIVE/DotsBG/DotsBG";
 import CardUpload from "./CardUpload/CardUpload";
+import TitleH1 from "@/components/_NOT_INTERACTIVE/TitleH1/TitleH1";
 
 // constants
 
@@ -198,6 +199,8 @@ const listItems = [
   },
 ];
 
+const valueArr = ["The Most Popular", "img", "We Produce"];
+
 export default function Manufacture() {
   return (
     <section className={css.section}>
@@ -208,11 +211,21 @@ export default function Manufacture() {
         <Tag>Manufacture</Tag>
 
         {/* title */}
-        <h2 className={`f_h1 ${css.title}`}>
+        {/* <h2 className={`f_h1 ${css.title}`}>
           The Most Popular{" "}
           <Image src={img_title} alt="Details" className={css.img_title} /> We
           Produce
-        </h2>
+        </h2> */}
+        <div className={css.container_title}>
+          <TitleH1
+            tag={"h2"}
+            valueArr={valueArr}
+            imgSrc={img_title}
+            imgAlt="Details"
+            marginInline="auto"
+            textAlign="center"
+          />
+        </div>
 
         {/* cards */}
         <ul className={css.container_cards}>

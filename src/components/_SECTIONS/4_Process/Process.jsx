@@ -17,6 +17,7 @@ import IconMake from "@/components/_NOT_INTERACTIVE/Icons/IconMake/IconMake";
 import IconShipped from "@/components/_NOT_INTERACTIVE/Icons/IconShipped/IconShipped";
 import ListItem from "./ListItem/ListItem";
 import ImageMasked from "./ImageMasked/ImageMasked";
+import TitleH1 from "@/components/_NOT_INTERACTIVE/TitleH1/TitleH1";
 
 // constants
 
@@ -67,16 +68,29 @@ const listItems = [
   },
 ];
 
+const valueArr = ["Innovative Manufacturing: Fast and", "img"];
+
 export default function Process() {
   return (
     <section className={css.section}>
       <div className={css.top}>
         <Tag>Process</Tag>
 
-        <h2 className={`f_h1 ${css.title}`}>
+        {/* <h2 className={`f_h1 ${css.title}`}>
           Innovative Manufacturing: Fast and{" "}
           <Image src={img_title} alt="Easy" className={css.img_title} />
-        </h2>
+        </h2> */}
+        <div className={css.container_title}>
+          <TitleH1
+            tag={"h2"}
+            valueArr={valueArr}
+            imgSrc={img_title}
+            imgAlt="Easy"
+            maxWidth="10ch"
+            hasDescender={true}
+          />
+        </div>
+
         {/* text */}
         <ul className={css.list_text}>
           {listItems.map(({ key, icon, obj }) => (

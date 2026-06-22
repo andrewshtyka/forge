@@ -1,0 +1,133 @@
+"use client";
+
+// #region ============================== Imports
+
+// animation
+import { animate, inView, stagger } from "motion/react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/SplitText";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// components
+import Image from "next/image";
+
+// constants
+
+// hooks
+
+// providers / context
+
+// styles
+import css from "./TitleH1.module.css";
+
+// utility
+import React from "react";
+
+// #endregion ===========================
+
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(SplitText);
+gsap.registerPlugin(ScrollTrigger);
+
+export default function TitleH1({
+  tag: Tag,
+  valueArr,
+  imgSrc,
+  imgAlt,
+  textAlign = "left",
+  marginInline = "0",
+  maxWidth = "15ch",
+  hasDescender = false,
+  color = "black",
+}) {
+  const titleRef = React.useRef(null);
+
+  useGSAP(
+    () => {
+      const el = titleRef.current;
+
+      const images = Array.from(el.querySelectorAll("img"));
+      const imgPromises = images.map((img) =>
+        img.complete
+          ? Promise.resolve()
+          : new Promise((res) => {
+              img.onload = res;
+              img.onerror = res;
+            }),
+      );
+
+      // чекаємо і шрифти, і картинки
+      Promise.all([document.fonts.ready, ...imgPromises]).then(() => {
+        SplitText.create(el, {
+          type: "lines",
+          linesClass: "line_split",
+          autoSplit: true,
+          onSplit: (instance) => {
+            gsap.set(instance.lines, { opacity: 0, y: 20 });
+
+            el.style.visibility = "visible";
+
+            return gsap.to(instance.lines, {
+              opacity: 1,
+              y: 0,
+              duration: 0.6,
+              stagger: 0.15,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: el,
+                start: "top 80%",
+                toggleActions: "play none none none",
+              },
+            });
+          },
+        });
+
+        ScrollTrigger.refresh();
+      });
+    },
+    { scope: titleRef },
+  );
+
+  const appliedClass = hasDescender ? css.has_descender : css.no_descender;
+
+  let appliedColor;
+  if (color === "black") appliedColor = "var(--color-text-dark)";
+  else if (color === "white") appliedColor = "var(--color-text-light)";
+
+  let appliedAlignClass;
+  if (textAlign === "center") {
+    appliedAlignClass = "u_center";
+  } else {
+    appliedAlignClass = " ";
+  }
+
+  return (
+    <Tag
+      ref={titleRef}
+      className={`f_h1 ${appliedAlignClass}`}
+      style={{
+        textAlign,
+        marginInline,
+        maxWidth,
+        color: appliedColor,
+        visibility: "hidden",
+      }}
+    >
+      {valueArr.map((el, i) => {
+        // img
+        if (el === "img") {
+          return (
+            <span key={i}>
+              <Image src={imgSrc} alt={imgAlt} className={appliedClass} />{" "}
+            </span>
+          );
+        }
+        // text
+        else {
+          return <span key={i}>{el} </span>;
+        }
+      })}
+    </Tag>
+  );
+}

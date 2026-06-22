@@ -18,6 +18,7 @@ import Divider from "@/components/_NOT_INTERACTIVE/Divider/Divider";
 import Button from "@/components/_INTERACTIVE/Button/Button";
 import IconArrow from "@/components/_NOT_INTERACTIVE/Icons/IconArrow/IconArrow";
 import Images from "./Images/Images";
+import TitleH1 from "@/components/_NOT_INTERACTIVE/TitleH1/TitleH1";
 
 // constants
 import { portfolioListItems } from "@/data/portfolioListItems";
@@ -34,15 +35,27 @@ import React from "react";
 
 // #endregion ===========================
 
+const valueArr = ["Check Our Latest", "img"];
+
 export default function Portfolio() {
   return (
     <section className={css.section}>
       <Tag>Portfolio</Tag>
 
-      <h2 className={`f_h1 ${css.title}`}>
+      {/* <h2 className={`f_h1 ${css.title}`}>
         Check Our Latest{" "}
         <Image src={img_title} alt="Works" className={css.img_title} />
-      </h2>
+      </h2> */}
+      <div className={css.container_title}>
+        <TitleH1
+          tag={"h2"}
+          valueArr={valueArr}
+          imgSrc={img_title}
+          imgAlt="Works"
+          maxWidth="10ch"
+          color="white"
+        />
+      </div>
 
       <span className={css.desktop}>
         <Divider colorBg="black" />

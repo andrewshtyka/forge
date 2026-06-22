@@ -8,7 +8,6 @@
   padding-block-start: var(--offset-sections);
   position: relative;
   z-index: 2;
-
 }
 
 @media (width >= 1200px) {
@@ -55,12 +54,14 @@
   grid-row: 1 / 2;
 }
 
+.container_title {
+  /* Viewport: 320 - 1920 */
+  margin-block-end: clamp(3rem, 2.1rem + 4.5vw, 7.5rem); /* 48 - 120 */
+}
+
 .title {
   text-align: left;
   max-width: 15ch;
-
-  /* Viewport: 320 - 1920 */
-  margin-block-end: clamp(3rem, 2.1rem + 4.5vw, 7.5rem); /* 48 - 120 */
 }
 
 .img_title {

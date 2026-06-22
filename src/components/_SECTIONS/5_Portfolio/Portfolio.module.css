@@ -4,10 +4,13 @@
   padding-block: var(--offset-sections);
 }
 
+.container_title {
+  margin-block-end: var(--space-14);
+}
+
 .title {
   text-align: left;
   max-width: 10ch;
-  margin-block-end: var(--space-14);
   color: var(--color-text-light);
 }
 

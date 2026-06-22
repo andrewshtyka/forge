@@ -27,8 +27,11 @@ import css from "./Hero.module.css";
 
 // utility
 import React from "react";
+import TitleH1 from "@/components/_NOT_INTERACTIVE/TitleH1/TitleH1";
 
 // #endregion ===========================
+
+const valueArr = ["Precision", "img", "Parts Shipped as Fast as Tomorrow"];
 
 export default function Hero() {
   return (
@@ -38,11 +41,20 @@ export default function Hero() {
 
       {/* title */}
       <div className={css.container_title}>
-        <h1 className={`f_h1 ${css.title}`}>
+        {/* <h1 className={`f_h1 ${css.title}`}>
           Precision{" "}
           <Image src={img_title} alt="CNC" className={css.img_title} /> Parts
           Shipped as Fast as Tomorrow
-        </h1>
+        </h1> */}
+        <TitleH1
+          tag={"h1"}
+          valueArr={valueArr}
+          imgSrc={img_title}
+          imgAlt="CNC"
+          m
+          textAlign="center"
+          marginInline="auto"
+        />
       </div>
 
       {/* animated images */}

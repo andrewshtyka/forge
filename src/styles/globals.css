@@ -33,6 +33,27 @@ body {
 
 /* ================================================== */
 /* */
+/* Split Text - titles */
+
+.u_center {
+  margin-inline: auto;
+}
+
+.f_h1.u_center {
+  display: inline-block;
+
+  & .line_split {
+    margin-inline: auto;
+  }
+}
+
+.line_split {
+  position: relative;
+  width: fit-content;
+}
+
+/* ================================================== */
+/* */
 /* APPEARANCE */
 ::selection {
 }
