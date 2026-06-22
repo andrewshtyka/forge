@@ -12,6 +12,7 @@ import Banner from "@/components/_SECTIONS/6_Banner/Banner";
 import Manufacture from "@/components/_SECTIONS/7_Manufacture/Manufacture";
 import Footer from "@/components/_SECTIONS/8_Footer/Footer";
 import HomePageWrapper from "@/components/_WRAPPERS/HomePageWrapper/HomePageWrapper";
+import VideoSectionWrapper from "@/components/_WRAPPERS/VideoSectionWrapper/VideoSectionWrapper";
 
 // #endregion ===========================
 
@@ -20,9 +21,9 @@ export default function Home() {
     <HomePageWrapper>
       <Header />
       <MenuMobile />
+
       <Hero />
-      <VideoSection />
-      <About />
+      <VideoSectionWrapper />
       <Process />
       <Portfolio />
       <Banner />

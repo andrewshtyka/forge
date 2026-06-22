@@ -17,7 +17,6 @@ import ButtonFullScreen from "./ButtonFullScreen/ButtonFullScreen";
 // constants
 
 // hooks
-import useWindowDimensions from "@/hooks/useWindowDimensions";
 
 // providers / context
 
@@ -32,14 +31,19 @@ import useParallax from "@/hooks/useParallax";
 
 const MotionImage = motion.create(Image);
 
-export default function VideoSection() {
+export default function VideoSection({ scrollYProgress }) {
+  // whole section animation on scroll
+  const scaleSection = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
+  const rotateSection = useTransform(scrollYProgress, [0, 1], [0, -5]);
+
+  // video setup
   const [isVisible, setIsVisible] = React.useState(true);
   const sectionRef = React.useRef(null);
   const iframeRef = React.useRef(null);
   const hasStartedRef = React.useRef(false);
 
   // video parallax
-  const parallaxY = useParallax(sectionRef);
+  const parallaxY = useParallax(sectionRef, 0.2);
 
   // hide poster and play youtube video
   function playVideo() {
@@ -77,7 +81,11 @@ export default function VideoSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className={css.section}>
+    <motion.section
+      ref={sectionRef}
+      className={css.section}
+      style={{ scale: scaleSection, rotate: rotateSection }}
+    >
       {/* video */}
       <iframe
         ref={iframeRef}
@@ -159,6 +167,6 @@ export default function VideoSection() {
           </motion.div>
         )}
       </AnimatePresence>
-    </section>
+    </motion.section>
   );
 }

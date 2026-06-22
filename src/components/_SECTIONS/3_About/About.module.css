@@ -1,7 +1,14 @@
 .section {
   grid-template-rows: repeat(3, min-content);
   border-bottom: none;
-  margin-inline: var(--offset-primary);
+  padding-inline: var(--offset-primary);
+
+  background-color: var(--color-bg-primary);
+
+  padding-block-start: var(--offset-sections);
+  position: relative;
+  z-index: 2;
+
 }
 
 @media (width >= 1200px) {

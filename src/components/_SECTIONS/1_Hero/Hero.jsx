@@ -3,6 +3,7 @@
 // #region ============================== Imports
 
 // animation
+import { motion, useTransform } from "motion/react";
 
 // assets
 import img_title from "@/assets/images/title_cnc.webp";
