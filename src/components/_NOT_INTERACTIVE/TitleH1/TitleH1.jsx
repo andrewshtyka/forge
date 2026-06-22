@@ -63,28 +63,32 @@ export default function TitleH1({
           linesClass: "line_split",
           autoSplit: true,
           onSplit: (instance) => {
+            // create bars
             instance.lines.forEach((line) => {
               const newDiv = document.createElement("div");
               newDiv.classList.add("bar");
               line.append(newDiv);
             });
 
+            // create array of bars (for animation)
             const barsArr = instance.lines.map((line) => {
               return line.querySelector(".bar");
             });
 
+            // create array of spans with content (for animation)
             const textsArr = instance.lines.map((line) => {
               return line.querySelectorAll("span");
             });
 
+            // make lines and texts invisible (on start)
             gsap.set(instance.lines, { visibility: "hidden" });
             gsap.set(textsArr, { visibility: "hidden" });
 
-            // instance.lines
+            // default timeline settings
             const tl = gsap.timeline({
               scrollTrigger: {
                 trigger: el,
-                start: "top bottom",
+                start: "top 90%",
                 toggleActions: "play none none none",
                 invalidateOnRefresh: true,
               },
@@ -106,7 +110,7 @@ export default function TitleH1({
                   visibility: "visible",
                   duration: 0,
                 },
-                ">-0.15",
+                ">-0.1",
               )
               .to(
                 barsArr,

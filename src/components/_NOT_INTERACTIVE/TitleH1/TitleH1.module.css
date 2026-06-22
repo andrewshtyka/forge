@@ -24,9 +24,3 @@
     height: clamp(3.5rem, 8vmin, 4.5rem);
   }
 }
-
-/* :global(.line_split) {
-  position: relative;
-  width: fit-content;
-  opacity: 0;
-} */
