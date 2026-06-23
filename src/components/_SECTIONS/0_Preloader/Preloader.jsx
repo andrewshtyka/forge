@@ -9,12 +9,14 @@ import { AnimatePresence, motion } from "motion/react";
 
 // constants
 import {
+  ANIM_PRELOADER,
   DELAY_BEFORE_SCROLLABLE,
   MIN_PRELOADER_TIME,
 } from "@/constants/animation";
 
 // providers / context
 import { useLenis } from "@/providers/LenisProvider/LenisProvider";
+import { PreloaderContext } from "@/providers/PreloaderProvider/PreloaderProvider";
 
 // styles
 import css from "./Preloader.module.css";
@@ -26,25 +28,27 @@ import React from "react";
 
 export default function Preloader() {
   const lenis = useLenis();
-  const [visible, setVisible] = React.useState(true);
+  const { isVisible, setIsVisible } = React.useContext(PreloaderContext);
 
-  // - pauses or plays lenis scroll
-  // - also blocks scroll whel loaded with DELAY_BEFORE_SCROLLABLE
+  // - pause or play lenis scroll
+  // - block scroll when loaded with DELAY_BEFORE_SCROLLABLE
   React.useEffect(() => {
     if (!lenis) return;
 
-    if (visible) {
+    if (isVisible) {
+      window.scrollTo(0, 0);
       lenis.stop();
       return;
     }
 
     const timeout = setTimeout(() => {
+      window.scrollTo(0, 0);
       lenis.start();
     }, DELAY_BEFORE_SCROLLABLE);
     return () => clearTimeout(timeout);
-  }, [lenis, visible]);
+  }, [lenis, isVisible]);
 
-  // waits while resources are loaded, then changes visibility of preloader
+  // wait while resources are loaded, then make preloader invisible
   React.useEffect(() => {
     const minDelay = new Promise((res) => setTimeout(res, MIN_PRELOADER_TIME));
     const resourcesReady = new Promise((res) => {
@@ -59,18 +63,30 @@ export default function Preloader() {
     Promise.all([minDelay, resourcesReady, fontsReady]).then(() => {
       document.body.style.cursor = "default";
       window.scrollTo(0, 0);
-      setVisible(false);
+      setIsVisible(false);
     });
   }, []);
 
   return (
     <AnimatePresence mode="wait">
-      {visible && (
-        <motion.section
-          className={css.section}
-          initial={{ clipPath: "inset(0% 0% 0% 0%)" }}
-          exit={{ clipPath: "inset(0% 0% 100% 0%)" }}
-        ></motion.section>
+      {isVisible && (
+        <motion.div
+          className={css.container}
+          initial={ANIM_PRELOADER.bg.initial}
+          exit={ANIM_PRELOADER.bg.exit}
+          transition={ANIM_PRELOADER.bg.transition}
+        >
+          <div className={css.bg_black} />
+
+          <motion.div
+            className={css.mask}
+            initial={ANIM_PRELOADER.preloaderMask.initial}
+            animate={ANIM_PRELOADER.preloaderMask.animate}
+            transition={ANIM_PRELOADER.preloaderMask.transition}
+          >
+            <div className={css.content}></div>
+          </motion.div>
+        </motion.div>
       )}
     </AnimatePresence>
   );

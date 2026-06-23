@@ -12,7 +12,6 @@ import img_icon from "@/assets/images/mesh.webp";
 // components
 import Image from "next/image";
 import IconArrow from "@/components/_NOT_INTERACTIVE/Icons/IconArrow/IconArrow";
-import DotsBG from "@/components/_NOT_INTERACTIVE/DotsBG/DotsBG";
 import Button from "@/components/_INTERACTIVE/Button/Button";
 import Sequence from "@/components/_SECTIONS/1_Hero/Sequence/Sequence";
 
@@ -33,9 +32,6 @@ import React from "react";
 export default function Hero() {
   return (
     <section className={css.section}>
-      {/* dots bg */}
-      <DotsBG />
-
       {/* title */}
       <div className={css.container_title}>
         <h1 className={`f_h1 ${css.title}`}>

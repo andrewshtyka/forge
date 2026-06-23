@@ -1,0 +1,34 @@
+.mask {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+
+  /* mask */
+  mask-image: url("/mask-image.svg");
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: 100vmax;
+}
+
+.bg_black {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  z-index: -1;
+
+  background-color: var(--color-bg-secondary);
+}
+
+.bg_white {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+
+  background-color: var(--color-bg-primary);
+}

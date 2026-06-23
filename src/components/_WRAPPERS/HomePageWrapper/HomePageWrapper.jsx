@@ -11,8 +11,6 @@
 // hooks
 import useBlurOnEscape from "@/hooks/useBlurOnEscape";
 
-import useScrollToTop from "@/hooks/useScrollToTop";
-
 // providers / context
 
 // styles

@@ -1,15 +1,41 @@
-.section {
+.container {
   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  z-index: 100;
+}
+
+.bg_black {
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 100dvh;
 
   background-color: var(--color-bg-secondary);
+  z-index: 20;
+}
 
-  display: grid;
-  place-content: center;
-  cursor: wait;
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
-  z-index: 100;
+  /* mask */
+  mask-image: url("/mask-image.svg");
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: 5vmax;
+
+  z-index: 20;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg-primary);
 }

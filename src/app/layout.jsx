@@ -13,6 +13,7 @@ import {
   PortfolioActiveItemProvider,
 } from "@/providers/ActiveItemProvider/ActiveItemProvider";
 import { LenisProvider } from "@/providers/LenisProvider/LenisProvider";
+import { PreloaderProvider } from "@/providers/PreloaderProvider/PreloaderProvider";
 
 // styles
 import "@/styles/globals.css";
@@ -34,12 +35,10 @@ export default function RootLayout({ children }) {
     <html lang="en" className={font.variable}>
       <body>
         <LenisProvider>
-          <Preloader />
-
           <MenuStateProvider>
             <AboutActiveItemProvider>
               <PortfolioActiveItemProvider>
-                {children}
+                <PreloaderProvider>{children}</PreloaderProvider>
               </PortfolioActiveItemProvider>
             </AboutActiveItemProvider>
           </MenuStateProvider>

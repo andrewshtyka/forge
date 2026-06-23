@@ -3,6 +3,7 @@
 // #region ============================== Imports
 
 // animation
+import { motion } from "motion/react";
 
 // components
 import IconLogo from "@/components/_NOT_INTERACTIVE/Icons/IconLogo/IconLogo";
@@ -17,6 +18,7 @@ import { ANIM_HEADER } from "@/constants/animation";
 
 // providers / context
 import { MenuStateContext } from "@/providers/MenuStateProvider/MenuStateProvider";
+import { PreloaderContext } from "@/providers/PreloaderProvider/PreloaderProvider";
 
 // styles
 import css from "./Header.module.css";
@@ -29,13 +31,23 @@ import React from "react";
 const menuItems = ["Reserve a machine", "Tool library", "Get in touch"];
 
 export default function Header() {
+  const { isVisible } = React.useContext(PreloaderContext);
   const { isMenuOpened } = React.useContext(MenuStateContext);
   const blendMode = useDelayedBlendMode(isMenuOpened);
 
   return (
-    <header
+    <motion.header
       className={`grid ${css.header}`}
-      style={{ mixBlendMode: blendMode }}
+      style={{
+        mixBlendMode: blendMode,
+      }}
+      initial={ANIM_HEADER.layout.initial}
+      animate={{
+        y: isVisible
+          ? ANIM_HEADER.layout.animate.end
+          : ANIM_HEADER.layout.animate.start,
+      }}
+      transition={ANIM_HEADER.layout.transition}
     >
       {/* logo */}
       <span className={css.container_logo}>
@@ -69,7 +81,7 @@ export default function Header() {
 
       {/* menu button - mobile */}
       <MenuButton />
-    </header>
+    </motion.header>
   );
 }
 
