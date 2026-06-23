@@ -33,7 +33,7 @@ const MotionImage = motion.create(Image);
 
 export default function VideoSection({ scrollYProgress }) {
   // whole section animation on scroll
-  const scaleSection = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
+  const scaleSection = useTransform(scrollYProgress, [0, 1], [1, 0.7]);
   const rotateSection = useTransform(scrollYProgress, [0, 1], [0, -5]);
 
   // video setup

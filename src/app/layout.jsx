@@ -1,11 +1,17 @@
 // #region ============================== Imports
 
+// components
+import Preloader from "@/components/_SECTIONS/0_Preloader/Preloader";
+
 // fonts
 import { font } from "@/lib/helpers/importFonts";
 
 // providers / context
 import { MenuStateProvider } from "@/providers/MenuStateProvider/MenuStateProvider";
-import { AboutActiveItemProvider, PortfolioActiveItemProvider } from "@/providers/ActiveItemProvider/ActiveItemProvider";
+import {
+  AboutActiveItemProvider,
+  PortfolioActiveItemProvider,
+} from "@/providers/ActiveItemProvider/ActiveItemProvider";
 
 // styles
 import "@/styles/globals.css";
@@ -25,13 +31,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={font.variable}>
-      <MenuStateProvider>
-        <AboutActiveItemProvider>
-          <PortfolioActiveItemProvider>
-            <body>{children}</body>
-          </PortfolioActiveItemProvider>
-        </AboutActiveItemProvider>
-      </MenuStateProvider>
+      <body>
+        <Preloader />
+        <MenuStateProvider>
+          <AboutActiveItemProvider>
+            <PortfolioActiveItemProvider>
+              {children}
+            </PortfolioActiveItemProvider>
+          </AboutActiveItemProvider>
+        </MenuStateProvider>
+      </body>
     </html>
   );
 }

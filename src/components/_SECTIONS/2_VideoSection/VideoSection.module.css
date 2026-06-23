@@ -5,7 +5,6 @@
 
   overflow: hidden;
 
-  /* position: relative; */
   position: sticky;
   top: 0;
 }
@@ -26,20 +25,9 @@
   pointer-events: none;
 }
 
-.container_dots {
-  position: absolute;
-  top: var(--offset-primary);
-  left: var(--offset-primary);
-  right: var(--offset-primary);
-  height: fit-content;
-
-  display: flex;
-  justify-content: space-between;
-}
-
 .info {
   position: absolute;
-  bottom: var(--offset-primary);
+  top: calc(var(--offset-primary) * 0.9);
   left: var(--offset-primary);
   right: var(--offset-primary);
   height: fit-content;
@@ -49,6 +37,17 @@
   justify-content: space-between;
 
   pointer-events: none;
+}
+
+.container_dots {
+  position: absolute;
+  bottom: var(--offset-primary);
+  left: var(--offset-primary);
+  right: var(--offset-primary);
+  height: fit-content;
+
+  display: flex;
+  justify-content: space-between;
 }
 
 .container_logo {

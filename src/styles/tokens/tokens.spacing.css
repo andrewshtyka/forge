@@ -29,6 +29,7 @@
   /* Border radius */
   --border-radius-primary: var(--space-4);
   --border-radius-secondary: var(--space-3);
+  --border-radius-tetriary: var(--space-2);
 
   /* ================================================== */
   /* */

@@ -1,5 +1,9 @@
 import { cubicBezier } from "motion/react";
 
+// Constants
+export const MIN_PRELOADER_TIME = 750;
+
+// Motion variants
 export const ANIM_HEADER = {
   button: {
     transition: 0.5,
@@ -171,5 +175,19 @@ export const ANIM_PORTFOLIO_LIST_ITEM = {
       type: "spring",
       bounce: 0.3,
     },
+  },
+};
+
+export const ANIM_TAG = {
+  initial: {
+    clipPath: "inset(0% 100% 0% 0% round var(--border-radius-secondary))",
+  },
+  animate: {
+    end: "inset(0% 0% 0% 0% round var(--border-radius-secondary))",
+    start: "inset(0% 100% 0% 0% round var(--border-radius-secondary))",
+  },
+  transition: {
+    duration: 1,
+    ease: cubicBezier(0.3, 0, 0, 1),
   },
 };

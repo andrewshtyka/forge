@@ -20,7 +20,7 @@ import { MIN_PRELOADER_TIME } from "@/constants/animation";
 // providers / context
 
 // styles
-import css from "./TitleH1.module.css";
+import css from "./TitleH2.module.css";
 
 // utility
 import React from "react";
@@ -31,38 +31,15 @@ gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(SplitText);
 gsap.registerPlugin(ScrollTrigger);
 
-export default function TitleH1({
-  tag: Tag,
-  valueArr,
-  imgSrc,
-  imgAlt,
-  textAlign = "left",
-  marginInline = "0",
-  maxWidth = "15ch",
-  hasDescender = false,
-  color = "black",
-}) {
+export default function TitleH2({ tag: Tag, valueArr }) {
   const titleRef = React.useRef(null);
-
-  let appliedColor;
-  if (color === "black") appliedColor = "var(--color-text-dark)";
-  else if (color === "white") appliedColor = "var(--color-text-light)";
 
   useGSAP(() => {
     const el = titleRef.current;
     if (!el) return;
+    const fontsReady = document.fonts.ready;
 
-    const images = Array.from(el.querySelectorAll("img"));
-    const imgPromises = images.map((img) =>
-      img.complete
-        ? Promise.resolve()
-        : new Promise((res) => {
-            img.onload = res;
-            img.onerror = res;
-          }),
-    );
-
-    Promise.all([document.fonts.ready, ...imgPromises]).then(() => {
+    fontsReady.then(() => {
       SplitText.create(el, {
         type: "lines",
         linesClass: "line_split",
@@ -82,7 +59,7 @@ export default function TitleH1({
 
           // set color to bars
           barsArr.forEach((bar) => {
-            bar.style.backgroundColor = appliedColor;
+            bar.style.backgroundColor = "var(--color-text-light)";
           });
 
           // create array of spans with content (for animation)
@@ -122,7 +99,7 @@ export default function TitleH1({
                 visibility: "visible",
                 duration: 0,
               },
-              ">-0.1",
+              ">0.05",
             )
             .to(
               barsArr,
@@ -144,41 +121,11 @@ export default function TitleH1({
     });
   });
 
-  const appliedClass = hasDescender ? css.has_descender : css.no_descender;
-
-  let appliedAlignClass;
-  if (textAlign === "center") {
-    appliedAlignClass = "u_center";
-  } else {
-    appliedAlignClass = " ";
-  }
-
   return (
-    <Tag
-      ref={titleRef}
-      className={`f_h1 ${appliedAlignClass}`}
-      style={{
-        textAlign,
-        marginInline,
-        maxWidth,
-        color: appliedColor,
-        visibility: "hidden",
-      }}
-    >
-      {valueArr.map((el, i) => {
-        // img
-        if (el === "img") {
-          return (
-            <span key={i}>
-              <Image src={imgSrc} alt={imgAlt} className={appliedClass} />{" "}
-            </span>
-          );
-        }
-        // text
-        else {
-          return <span key={i}>{el} </span>;
-        }
-      })}
+    <Tag ref={titleRef} className={`f_h2 ${css.title}`}>
+      {valueArr.map((el, i) => (
+        <span key={i}>{el} </span>
+      ))}
     </Tag>
   );
 }
