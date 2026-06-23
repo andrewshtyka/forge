@@ -32,19 +32,6 @@
   }
 }
 
-.title {
-  color: var(--color-text-light);
-  text-align: center;
-  margin-block-end: var(--space-6);
-  max-width: 15ch;
-}
-
-@media (width >= 500px) {
-  .title {
-    max-width: none;
-  }
-}
-
 .text {
   color: var(--color-text-light);
   text-align: center;

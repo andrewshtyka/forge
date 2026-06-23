@@ -2,6 +2,7 @@ import { cubicBezier } from "motion/react";
 
 // Constants
 export const MIN_PRELOADER_TIME = 750;
+export const DELAY_BEFORE_SCROLLABLE = 400;
 
 // Motion variants
 export const ANIM_HEADER = {
@@ -188,6 +189,20 @@ export const ANIM_TAG = {
   },
   transition: {
     duration: 1,
+    ease: cubicBezier(0.3, 0, 0, 1),
+  },
+};
+
+export const ANIM_BANNER_LOGO = {
+  initial: {
+    scale: 0,
+  },
+  animate: {
+    start: 0,
+    end: 1,
+  },
+  transition: {
+    duration: 1.5,
     ease: cubicBezier(0.3, 0, 0, 1),
   },
 };

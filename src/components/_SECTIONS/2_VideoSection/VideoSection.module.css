@@ -37,6 +37,7 @@
   justify-content: space-between;
 
   pointer-events: none;
+  mix-blend-mode: difference;
 }
 
 .container_dots {

@@ -25,6 +25,7 @@ export default function IconLogo({
   size = 18,
   isRotatingRight = false,
   isRotatingLeft = false,
+  ...rest
 }) {
   let appliedColor;
   if (color === "white") {
@@ -48,6 +49,7 @@ export default function IconLogo({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={appliedClass}
+      {...rest}
     >
       <path
         stroke={appliedColor}

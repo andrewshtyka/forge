@@ -3,6 +3,7 @@
 // #region ============================== Imports
 
 // animation
+import { motion, useInView } from "motion/react";
 
 // components
 import IconLogo from "@/components/_NOT_INTERACTIVE/Icons/IconLogo/IconLogo";
@@ -21,21 +22,37 @@ import css from "./Banner.module.css";
 
 // utility
 import React from "react";
+import { ANIM_BANNER_LOGO } from "@/constants/animation";
 
 // #endregion ===========================
 
 const valueArr = ["Ready to Bring Your Detail to Life?"];
 
+const MotionIcon = motion.create(IconLogo);
+
 export default function Banner() {
+  const iconRef = React.useRef(null);
+  const isInView = useInView(iconRef, {
+    margin: "0% 0% 0% 0%",
+    once: true,
+  });
+
   return (
     <section className={css.section}>
       <span className={css.container_icon}>
-        <IconLogo size="100%" />
+        <MotionIcon
+          ref={iconRef}
+          size="100%"
+          initial={ANIM_BANNER_LOGO.initial}
+          animate={{
+            scale: isInView
+              ? ANIM_BANNER_LOGO.animate.end
+              : ANIM_BANNER_LOGO.animate.start,
+          }}
+          transition={ANIM_BANNER_LOGO.transition}
+        />
       </span>
 
-      {/* <h2 className={`f_h2 ${css.title}`}>
-        Ready to Bring Your Detail to Life?
-      </h2> */}
       <TitleH2 valueArr={valueArr} tag="h2" />
 
       <div className={css.bottom}>

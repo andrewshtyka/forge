@@ -8,20 +8,44 @@ import { AnimatePresence, motion } from "motion/react";
 // components
 
 // constants
-import { MIN_PRELOADER_TIME } from "@/constants/animation";
+import {
+  DELAY_BEFORE_SCROLLABLE,
+  MIN_PRELOADER_TIME,
+} from "@/constants/animation";
+
+// providers / context
+import { useLenis } from "@/providers/LenisProvider/LenisProvider";
 
 // styles
 import css from "./Preloader.module.css";
 
 // utility
-import { useEffect, useState } from "react";
+import React from "react";
 
 // #endregion ===========================
 
 export default function Preloader() {
-  const [visible, setVisible] = useState(true);
+  const lenis = useLenis();
+  const [visible, setVisible] = React.useState(true);
 
-  useEffect(() => {
+  // - pauses or plays lenis scroll
+  // - also blocks scroll whel loaded with DELAY_BEFORE_SCROLLABLE
+  React.useEffect(() => {
+    if (!lenis) return;
+
+    if (visible) {
+      lenis.stop();
+      return;
+    }
+
+    const timeout = setTimeout(() => {
+      lenis.start();
+    }, DELAY_BEFORE_SCROLLABLE);
+    return () => clearTimeout(timeout);
+  }, [lenis, visible]);
+
+  // waits while resources are loaded, then changes visibility of preloader
+  React.useEffect(() => {
     const minDelay = new Promise((res) => setTimeout(res, MIN_PRELOADER_TIME));
     const resourcesReady = new Promise((res) => {
       if (document.readyState === "complete") {

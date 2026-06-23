@@ -10,7 +10,7 @@
 
 // hooks
 import useBlurOnEscape from "@/hooks/useBlurOnEscape";
-import useLenis from "@/hooks/useLenis";
+
 import useScrollToTop from "@/hooks/useScrollToTop";
 
 // providers / context
@@ -24,9 +24,7 @@ import React from "react";
 // #endregion ===========================
 
 export default function HomePageWrapper({ children }) {
-  useScrollToTop();
   useBlurOnEscape();
-  useLenis();
 
   return <>{children}</>;
 }

@@ -12,6 +12,7 @@ import {
   AboutActiveItemProvider,
   PortfolioActiveItemProvider,
 } from "@/providers/ActiveItemProvider/ActiveItemProvider";
+import { LenisProvider } from "@/providers/LenisProvider/LenisProvider";
 
 // styles
 import "@/styles/globals.css";
@@ -32,14 +33,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={font.variable}>
       <body>
-        <Preloader />
-        <MenuStateProvider>
-          <AboutActiveItemProvider>
-            <PortfolioActiveItemProvider>
-              {children}
-            </PortfolioActiveItemProvider>
-          </AboutActiveItemProvider>
-        </MenuStateProvider>
+        <LenisProvider>
+          <Preloader />
+
+          <MenuStateProvider>
+            <AboutActiveItemProvider>
+              <PortfolioActiveItemProvider>
+                {children}
+              </PortfolioActiveItemProvider>
+            </AboutActiveItemProvider>
+          </MenuStateProvider>
+        </LenisProvider>
       </body>
     </html>
   );
