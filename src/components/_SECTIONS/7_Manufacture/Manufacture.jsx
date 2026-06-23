@@ -1,5 +1,3 @@
-"use client";
-
 // #region ============================== Imports
 
 // animation
@@ -16,7 +14,6 @@ import img_title from "@/assets/images/title_details.webp";
 
 // components
 import Tag from "@/components/_NOT_INTERACTIVE/Tag/Tag";
-import Image from "next/image";
 import CardProduct from "./CardProduct/CardProduct";
 import DotsBG from "@/components/_NOT_INTERACTIVE/DotsBG/DotsBG";
 import CardUpload from "./CardUpload/CardUpload";
@@ -211,11 +208,6 @@ export default function Manufacture() {
         <Tag>Manufacture</Tag>
 
         {/* title */}
-        {/* <h2 className={`f_h1 ${css.title}`}>
-          The Most Popular{" "}
-          <Image src={img_title} alt="Details" className={css.img_title} /> We
-          Produce
-        </h2> */}
         <div className={css.container_title}>
           <TitleH1
             tag={"h2"}

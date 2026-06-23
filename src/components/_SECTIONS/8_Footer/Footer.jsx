@@ -1,5 +1,3 @@
-"use client";
-
 // #region ============================== Imports
 
 // animation
@@ -70,7 +68,7 @@ export default function Footer() {
               </LinkText>
             </div>
           </div>
-          
+
           {/* text */}
           <p className={`f_body ${css.text}`}>
             Current design is a concept, made by me –{" "}

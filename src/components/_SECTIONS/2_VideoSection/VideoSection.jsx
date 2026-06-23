@@ -3,7 +3,7 @@
 // #region ============================== Imports
 
 // animation
-import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
+import { AnimatePresence, motion, useTransform } from "motion/react";
 
 // assets
 import poster from "@/assets/images/video_poster.webp";

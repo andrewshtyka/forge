@@ -3,10 +3,9 @@
 // #region ============================== Imports
 
 // animation
-import { motion, useScroll } from "motion/react";
+import { useScroll } from "motion/react";
 
 // components
-import Hero from "@/components/_SECTIONS/1_Hero/Hero";
 import VideoSection from "@/components/_SECTIONS/2_VideoSection/VideoSection";
 
 // constants

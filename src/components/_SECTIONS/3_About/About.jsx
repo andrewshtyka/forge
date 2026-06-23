@@ -1,5 +1,3 @@
-"use client";
-
 // #region ============================== Imports
 
 // animation
@@ -40,10 +38,6 @@ export default function About() {
       {/* left part */}
       <div className={css.content_left}>
         {/* title */}
-        {/* <h2 className={`f_h1 ${css.title}`}>
-          Revolutionizing Manufacturing with Speed &{" "}
-          <Image src={img_title} alt="Precision" className={css.img_title} />
-        </h2> */}
         <div className={css.container_title}>
           <TitleH1
             tag={"h2"}

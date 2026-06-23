@@ -1,5 +1,3 @@
-"use client";
-
 // #region ============================== Imports
 
 // animation
@@ -42,10 +40,6 @@ export default function Portfolio() {
     <section className={css.section}>
       <Tag>Portfolio</Tag>
 
-      {/* <h2 className={`f_h1 ${css.title}`}>
-        Check Our Latest{" "}
-        <Image src={img_title} alt="Works" className={css.img_title} />
-      </h2> */}
       <div className={css.container_title}>
         <TitleH1
           tag={"h2"}

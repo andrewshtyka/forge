@@ -1,5 +1,3 @@
-"use client";
-
 // #region ============================== Imports
 
 // animation
@@ -10,7 +8,6 @@ import img_process from "@/assets/images/img_process.webp";
 
 // components
 import Tag from "@/components/_NOT_INTERACTIVE/Tag/Tag";
-import Image from "next/image";
 import IconUpload from "@/components/_NOT_INTERACTIVE/Icons/IconUpload/IconUpload";
 import IconCheckout from "@/components/_NOT_INTERACTIVE/Icons/IconCheckout/IconCheckout";
 import IconMake from "@/components/_NOT_INTERACTIVE/Icons/IconMake/IconMake";
@@ -76,10 +73,6 @@ export default function Process() {
       <div className={css.top}>
         <Tag>Process</Tag>
 
-        {/* <h2 className={`f_h1 ${css.title}`}>
-          Innovative Manufacturing: Fast and{" "}
-          <Image src={img_title} alt="Easy" className={css.img_title} />
-        </h2> */}
         <div className={css.container_title}>
           <TitleH1
             tag={"h2"}

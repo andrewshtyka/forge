@@ -25,24 +25,6 @@
   margin-block-end: clamp(3rem, 2.1rem + 4.5vw, 7.5rem); /* 48 - 120 */
 }
 
-.title {
-  text-align: left;
-  max-width: 10ch;
-}
-
-.img_title {
-  /* Viewport: 320 - 1920 */
-  height: clamp(2rem, 8vmin, 5.5rem);
-  width: auto;
-  position: relative;
-}
-
-@media (width >= 1200px) {
-  .img_title {
-    height: clamp(3.5rem, 8vmin, 4.5rem);
-  }
-}
-
 .list_text {
   display: grid;
   grid-template-columns: 1fr;

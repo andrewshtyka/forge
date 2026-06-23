@@ -8,26 +8,6 @@
   margin-block-end: var(--space-14);
 }
 
-.title {
-  text-align: left;
-  max-width: 10ch;
-  color: var(--color-text-light);
-}
-
-.img_title {
-  /* Viewport: 320 - 1920 */
-  height: clamp(1.625rem, 6.5vmin, 4.5rem); /* 26 - 72 */
-  width: auto;
-  position: relative;
-  bottom: 0.13em;
-}
-
-@media (width >= 1200px) {
-  .img_title {
-    height: clamp(3rem, 6.5vmin, 4.5rem);
-  }
-}
-
 .list_mob {
   display: flex;
   flex-direction: column;
