@@ -28,6 +28,8 @@
   left: var(--space-4);
   right: var(--space-4);
   z-index: 2;
+
+  mix-blend-mode: difference;
 }
 
 .container_dots_top {

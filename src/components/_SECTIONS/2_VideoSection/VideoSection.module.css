@@ -25,6 +25,16 @@
   pointer-events: none;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-bg-secondary);
+  /* opacity: 0.2; */
+}
+
 .info {
   position: absolute;
   top: calc(var(--offset-primary) * 0.9);
@@ -37,7 +47,7 @@
   justify-content: space-between;
 
   pointer-events: none;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
 }
 
 .container_dots {
@@ -49,6 +59,7 @@
 
   display: flex;
   justify-content: space-between;
+  /* mix-blend-mode: difference; */
 }
 
 .container_logo {

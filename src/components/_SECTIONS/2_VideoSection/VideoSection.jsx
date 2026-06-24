@@ -101,16 +101,24 @@ export default function VideoSection({ scrollYProgress }) {
       {/* poster */}
       <AnimatePresence mode="wait">
         {isVisible && (
-          <MotionImage
-            src={poster}
-            alt="Details"
-            loading="eager"
-            className={css.img}
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.75 }}
-            style={{ y: parallaxY }}
-          />
+          <>
+            <MotionImage
+              src={poster}
+              alt="Details"
+              loading="eager"
+              className={css.img}
+              initial={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.75 }}
+              style={{ y: parallaxY }}
+            />
+            <motion.div
+              className={css.overlay}
+              initial={{ opacity: 0.2 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.75 }}
+            />
+          </>
         )}
       </AnimatePresence>
 

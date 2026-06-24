@@ -12,3 +12,23 @@
   object-fit: cover;
   background-color: var(--color-gray-200);
 }
+
+.container_dots_top,
+.container_dots_bottom {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  left: var(--space-4);
+  right: var(--space-4);
+  z-index: 2;
+
+  mix-blend-mode: difference;
+}
+
+.container_dots_top {
+  top: var(--space-4);
+}
+
+.container_dots_bottom {
+  bottom: var(--space-4);
+}

@@ -24,6 +24,7 @@ import css from "./Images.module.css";
 // utility
 import React from "react";
 import { li } from "motion/react-client";
+import Dot from "@/components/_NOT_INTERACTIVE/Dot/Dot";
 
 // #endregion ===========================
 
@@ -36,6 +37,10 @@ export default function Images() {
     <ul className={css.container}>
       {portfolioListItems.map(({ id, img, title }) => (
         <li key={id} style={{ display: "inline" }}>
+          <div className={css.container_dots_top}>
+            <Dot />
+            <Dot />
+          </div>
           <MotionImage
             src={img}
             alt={title}
@@ -44,6 +49,10 @@ export default function Images() {
             initial={{ opacity: 1 }}
             animate={{ opacity: id === activeId ? 1 : 0 }}
           />
+          <div className={css.container_dots_bottom}>
+            <Dot />
+            <Dot />
+          </div>
         </li>
       ))}
     </ul>
