@@ -15,7 +15,7 @@ import VideoSection from "@/components/_SECTIONS/2_VideoSection/VideoSection";
 // providers / context
 
 // styles
-import css from "./VideoSectionWrapper.module.css";
+// import css from ".";
 
 // utility
 import React from "react";
@@ -31,7 +31,10 @@ export default function VideoSectionWrapper() {
   });
 
   return (
-    <div ref={containerRef} className={css.container}>
+    <div
+      ref={containerRef}
+      style={{ backgroundColor: "var(--color-bg-accent)" }}
+    >
       <VideoSection scrollYProgress={scrollYProgress} />
       <About />
     </div>
