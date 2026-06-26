@@ -42,6 +42,13 @@ export default function Hero() {
       <ul className={css.container_sequence}>
         <Sequence />
       </ul>
+      {/* <div className={css.container_sequence_blur}>
+        <div className={css.blur_left} />
+        <div className={css.blur_right} />
+        <ul className={css.list}>
+          <Sequence />
+        </ul>
+      </div> */}
 
       {/* bottom */}
       <div className={css.container_bottom}>
